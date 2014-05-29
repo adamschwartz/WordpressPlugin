@@ -16,7 +16,7 @@ function eager_load() {
   if(is_admin())
     require_once(EAGER_DIR.'includes/admin.php');
 
-  require_once(EAGER_URL.'includes/core.php');
+  require_once(EAGER_DIR.'includes/core.php');
 }
 
 eager_load();
