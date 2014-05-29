@@ -82,7 +82,7 @@ function eager_options_validate($input) {
 
 // Description text
 function eager_eagerembedcode_desc() {
-  echo '<p>Enter the 10 character code obtained from <a href="http://eager.io">Eager</a>. See <a href="http://eager.io/help/wp-eager">Eager Wordpress Installation Help</a> for more information.</p>';
+  echo '<p>Enter the 10 character code obtained from <a href="http://eager.io" target="_blank">Eager</a>. See <a href="http://eager.io/help/wp-eager" target="_blank">Eager Wordpress Installation Help</a> for more information.</p>';
 }
 
 // Filed output
