@@ -21,22 +21,14 @@ function eager_load() {
 
 eager_load();
 
-function eager_uninstall() {
-  // Uninstall
-  //
-}
+function eager_uninstall() {}
 
-register_activation_hook(__FILE__, 'eager_activation');
 function eager_activation() {
-  // Activation
-  //
   register_uninstall_hook(__FILE__, 'eager_uninstall');
 }
+register_activation_hook(__FILE__, 'eager_activation');
 
+function eager_deactivation() {}
 register_deactivation_hook(__FILE__, 'eager_deactivation');
-function eager_deactivation() {
-  // Deactivation
-  //
-}
 
 ?>
