@@ -1,4 +1,5 @@
 <?php
+
 // Register menu item
 function eager_admin_menu_setup() {
   add_submenu_page(
@@ -15,15 +16,15 @@ add_action('admin_menu', 'eager_admin_menu_setup'); //menu setup
 // Display page content
 function eager_admin_page_screen() {
   global $submenu;
-  // Access page settings
 
+  // Access page settings
   $page_data = array();
   foreach ($submenu['options-general.php'] as $i => $menu_item) {
     if ($submenu['options-general.php'][$i][2] == 'eager')
       $page_data = $submenu['options-general.php'][$i];
   }
 
-  // Output (I want to cry so hard...)
+  // Output
   ?>
   <div class="wrap">
     <?php screen_icon();?>
@@ -64,8 +65,8 @@ function eager_settings_init() {
 
   add_settings_field(
     'eager_eagerembedcode',
-    'Template',
-    'eager_eagerembedcode_field',
+    'Eager Site embed code',
+    'eager_eagerembedcode_callback',
     'eager',
     'eager_eagerembedcode'
   );
@@ -74,11 +75,9 @@ add_action('admin_init', 'eager_settings_init');
 
 // Validate input
 function eager_options_validate($input) {
+  if (!eager_is_valid_embed_code($input['eager_eagerembedcode']))
+    add_settings_error('eager_eagerembedcode', 'texterror', 'The Site embed code must be 10 alphanumeric characters with no spaces or punctuation (for example, "A1b2C3d4E5").', 'error');
   return $input;
-  // global $allowedposttags, $allowedrichhtml;
-  // if(isset($input['eagerembedcode']))
-  //   $input['eagerembedcode'] = wp_kses_post($input['eagerembedcode']);
-  // return $input;
 }
 
 // Description text
@@ -87,13 +86,14 @@ function eager_eagerembedcode_desc() {
 }
 
 // Filed output
-function eager_eagerembedcode_field() {
+function eager_eagerembedcode_callback() {
   $options = get_option('eager_options');
+  $code = $options['eager_eagerembedcode'];
 
-  $eagerembedcode = esc_textarea($eagerembedcode); // Sanitise output
-?>
-  <input type="text" id="eagerembedcode" name="eager_options[eagerembedcode]" cols="50" rows="5" value="<?php echo $eagerembedcode;?>">
-<?php
+  // Output
+  ?>
+    <input type="text" id="eager_eagerembedcode" name="eager_options[eager_eagerembedcode]" maxlength="10" value="<?php echo $code; ?>">
+  <?php
 }
 
 ?>
