@@ -42,7 +42,7 @@ function eager_admin_page_screen() {
 
 // Settings link in plugin management screen
 function eager_settings_link($actions, $file) {
-  if(false !== strpos($file, 'msp-helloworld'))
+  if (false !== strpos($file, 'eager'))
     $actions['settings'] = '<a href="options-general.php?page=eager">Settings</a>';
   return $actions;
 }
