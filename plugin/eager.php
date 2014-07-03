@@ -13,7 +13,7 @@ define('EAGER_DIR', plugin_dir_path(__FILE__));
 define('EAGER_URL', plugin_dir_url(__FILE__));
 
 function eager_load() {
-  if(is_admin())
+  if (is_admin())
     require_once(EAGER_DIR.'includes/admin.php');
 
   require_once(EAGER_DIR.'includes/core.php');
