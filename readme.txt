@@ -2,9 +2,9 @@
 Contributors: EagerIO
 Donate link: http://eager.io
 Tags: applications, app store
+Stable tag: v1.0.1
 Requires at least: 3.4
 Tested up to: 3.4.1
-Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,9 @@ Absolutely. Just follow the [manual Eager installation guide](http://eager.io/he
 1. Eager logo
 
 == Changelog ==
+
+= 1.0.1 =
+* Reformat directory
 
 = 1.0 =
 * Initial version
