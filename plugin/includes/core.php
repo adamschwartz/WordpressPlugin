@@ -1,7 +1,7 @@
 <?php
 
 function eager_is_valid_embed_code($code) {
-  if (is_string($code) && preg_match('/\A[a-zA-Z\d]{10}\z/', $code))
+  if (is_string($code) && preg_match('/\A[a-zA-Z\d_\-]{10,}\z/', $code))
     return true;
   else
     return false;
