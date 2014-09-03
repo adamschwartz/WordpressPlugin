@@ -7,15 +7,28 @@ function eager_is_valid_embed_code($code) {
     return false;
 }
 
-function eager_embed_code() {
-  $options = get_option('eager_options');
-  $code = $options['eager_eagerembedcode'];
+function eager_get_embed_code(){
+  // This is inserted by the download builder.  If you are installing from GitHub, it
+  // will be ignored.
+  $embeddedCode = "{{.EmbedCode}}";
 
-  if (eager_is_valid_embed_code($code))
-    echo '<script src="//fast.eager.io/'.$code.'.js"></script>';
-  else
-    echo '';
+  $options = get_option('eager_options');
+
+  if (eager_is_valid_embed_code($options['eager_embedcode'])){
+    return $options['eager_embedcode'];
+  } else if (eager_is_valid_embed_code($embeddedCode)){
+    return $embeddedCode;
+  } else {
+    return null;
+  }
 }
-add_action('wp_head', 'eager_embed_code');
+
+function eager_get_embed_html() {
+  $code = eager_get_embed_code();
+  if ($code){
+    echo '<script src="//fast.eager.io/'.$code.'.js"></script>';
+  }
+}
+add_action('wp_head', 'eager_get_embed_html');
 
 ?>

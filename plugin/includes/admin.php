@@ -57,42 +57,41 @@ function eager_settings_init() {
   );
 
   add_settings_section(
-    'eager_eagerembedcode',
+    'eager_embedcode',
     'Embed code',
-    'eager_eagerembedcode_desc',
+    'eager_embedcode_desc',
     'eager'
   );
 
   add_settings_field(
-    'eager_eagerembedcode',
+    'eager_embedcode',
     'Eager Site embed code',
-    'eager_eagerembedcode_callback',
+    'eager_embedcode_callback',
     'eager',
-    'eager_eagerembedcode'
+    'eager_embedcode'
   );
 }
 add_action('admin_init', 'eager_settings_init');
 
 // Validate input
 function eager_options_validate($input) {
-  if (!eager_is_valid_embed_code($input['eager_eagerembedcode']))
-    add_settings_error('eager_eagerembedcode', 'texterror', 'The Site embed code must be 10 alphanumeric characters with no spaces or punctuation (for example, "A1b2C3d4E5").', 'error');
+  if (!eager_is_valid_embed_code($input['eager_embedcode']))
+    add_settings_error('eager_embedcode', 'texterror', 'The site code should be 10 or more alphanumeric characters, underscore and hyphen with no spaces or punctuation, for example "j3-Vaj_3hG".', 'error');
   return $input;
 }
 
 // Description text
-function eager_eagerembedcode_desc() {
-  echo '<p>Enter the 10 character code obtained from <a href="http://eager.io" target="_blank">Eager</a>. See <a href="http://eager.io/help/wp-eager" target="_blank">Eager Wordpress Installation Help</a> for more information.</p>';
+function eager_embedcode_desc() {
+  echo '<p>Enter the code obtained from <a href="http://eager.io" target="_blank">Eager</a>. See <a href="http://eager.io/help/wp-eager" target="_blank">Eager Wordpress Installation Help</a> for more information.</p>';
 }
 
 // Filed output
-function eager_eagerembedcode_callback() {
-  $options = get_option('eager_options');
-  $code = $options['eager_eagerembedcode'];
+function eager_embedcode_callback() {
+  $code = eager_get_embed_code();
 
   // Output
   ?>
-    <input type="text" id="eager_eagerembedcode" name="eager_options[eager_eagerembedcode]" maxlength="10" value="<?php echo $code; ?>">
+    <input type="text" id="eager_embedcode" name="eager_options[eager_embedcode]" maxlength="12" value="<?php echo $code; ?>">
   <?php
 }
 
