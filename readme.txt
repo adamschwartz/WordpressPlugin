@@ -1,6 +1,6 @@
 === Eager ===
 Contributors: EagerIO
-Donate link: http://eager.io
+Donate link: https://eager.io
 Tags: applications, app store
 Stable tag: v1.0.1
 Requires at least: 3.4
@@ -12,8 +12,8 @@ Install Eager on your site to enable installation of apps from the Eager App Sto
 
 == Description ==
 
-Use the Eager Wordpress plugin to easilly install [Eager](http://eager.io) on your Wordpress site.
-Visit [http://eager.io](http://eager.io) for more information.
+Use the Eager Wordpress plugin to easilly install [Eager](https://eager.io) on your Wordpress site.
+Visit [https://eager.io](https://eager.io) for more information.
 
 == Installation ==
 
@@ -24,7 +24,7 @@ Visit [http://eager.io](http://eager.io) for more information.
 
 = Can I add Eager to my Wordpress site without this plugin? =
 
-Absolutely. Just follow the [manual Eager installation guide](http://eager.io/help/install).
+Absolutely. Just follow the [manual Eager installation guide](https://eager.io/help/install).
 
 == Screenshots ==
 

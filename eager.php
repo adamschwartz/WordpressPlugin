@@ -4,8 +4,8 @@ Plugin Name: Eager
 Description: Install Eager on your site to enable installation of apps from the Eager App Store.
 Version: 1.0
 Author: Eager
-Author URI: http://eager.io
-Plugin URI: http://wordpress.org/extend/plugins/wp-eager/
+Author URI: https://eager.io
+Plugin URI: https://eager.io/wordpress
 */
 
 define('EAGER_VERSION', '1.0');
