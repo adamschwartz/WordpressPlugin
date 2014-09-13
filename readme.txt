@@ -17,8 +17,7 @@ Visit [https://eager.io](https://eager.io) for more information.
 
 == Installation ==
 
-1. Install [wp-eager](http://wordpress.org/extend/plugins/wp-eager/).
-1. On the Eager plugin settings page, paste in your embed code (for example, `D3ad341vj9`) into the input provided.
+Follow the instructions on the [Eager Wordpress installation page](https://eager.io/wordpress).
 
 == Frequently Asked Questions ==
 
