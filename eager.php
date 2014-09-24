@@ -21,10 +21,30 @@ function eager_load() {
 
 eager_load();
 
+function eager_notify() {
+  $embedCode = eager_get_embed_code();
+  if (!eager_is_valid_embed_code($embedCode)){
+    return;
+  }
+
+  $url = "http://notifier.eager.io/set/" . $embedCode;
+  $notice = array(
+    'site' => home_url(),
+    'source' => 'wordpress'
+  );
+
+  $body = json_encode($notice);
+  wp_remote_post($url, array(
+    'body' => $body
+  ));
+}
+
 function eager_uninstall() {}
 
 function eager_activation() {
   register_uninstall_hook(__FILE__, 'eager_uninstall');
+
+  eager_notify();
 }
 register_activation_hook(__FILE__, 'eager_activation');
 
