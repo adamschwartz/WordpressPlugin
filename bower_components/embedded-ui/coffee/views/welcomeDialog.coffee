@@ -4,6 +4,8 @@ resets = require('../utils/reset')
 {Evented} = require('../utils/events')
 
 class WelcomeDialogView extends Evented
+  constructor: (@options={}) ->
+
   render: ->
     @el = ui.createIframe()
     document.body.appendChild @el
@@ -23,7 +25,11 @@ class WelcomeDialogView extends Evented
         ui.removeElement @el
 
   setIframeURL: ->
-    @el.setAttribute 'src', "//embedded.eager.io/pages/welcome-dialog##{ @appName or '' }"
+    slug = @appName or ''
+    if @options.wordpress
+      slug = "wp!#{ slug }"
+
+    @el.setAttribute 'src', "//embedded.eager.io/pages/welcome-dialog##{ slug }"
 
   setAppName: (@appName) ->
     @setIframeURL()

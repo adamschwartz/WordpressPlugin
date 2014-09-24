@@ -6,8 +6,13 @@ include ../../../bower_components/ui/jade/logo
 block head-before-styles
   +typekit
 
+  style.
+    body {
+      display: none;
+    }
+
 block body-before-scripts
-  .banner
+  .banner.only-in-page
     p
       em Don’t worry
       | , only you can see this.
@@ -21,7 +26,10 @@ block body-before-scripts
             h1 Congrats! You’ve successfully installed Eager.
             h2
               em Don’t worry
-              | , only you can see this new stuff we added to your page.
+              span.only-in-wordpress
+                |, we'll only show this once.
+              span.only-in-page
+                | , only you can see this new stuff we added to your page.
           section
             p.spaced
               | Now that you’ve added Eager to your site,

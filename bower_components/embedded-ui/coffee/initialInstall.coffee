@@ -2,10 +2,10 @@
 
 Bus = require('../bower_components/bus/coffee/client')
 
-show = ->
+show = (options) ->
   pendingInstall = undefined
 
-  dialog = new WelcomeDialogView
+  dialog = new WelcomeDialogView(options)
   dialog.on 'click:ok', ->
     url = 'https://eager.io/home'
 

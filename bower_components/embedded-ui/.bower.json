@@ -6,11 +6,11 @@
     "bus": "git@github.com:EagerIO/Bus.git"
   },
   "homepage": "https://github.com/EagerIO/EmbeddedUI",
-  "_release": "5f8fdd1df6",
+  "_release": "77498bb36f",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "5f8fdd1df613fa98d6a77cf884a78aebd44dee3a"
+    "commit": "77498bb36f65cedcfa3e1af48c9cba58538470ca"
   },
   "_source": "git@github.com:EagerIO/EmbeddedUI.git",
   "_target": "master",
