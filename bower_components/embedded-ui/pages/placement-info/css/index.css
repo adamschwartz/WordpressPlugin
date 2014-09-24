@@ -1,0 +1,142 @@
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+html {
+  background: transparent;
+}
+body {
+  background: rgba(0,0,0,0.4);
+  font-family: "freight-text-pro", sans-serif;
+  text-rendering: optimizeLegibility;
+}
+.banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 300;
+  color: #fff;
+  background-color: #3b1cce;
+  background: linear-gradient(45deg, #ba0d83, #3b1cce);
+}
+.banner p {
+  margin: 0;
+}
+.dialog-scroller {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.dialog {
+  background: #fff;
+  width: 560px;
+  border-radius: 5px;
+  padding: 20px;
+}
+.dialog h1 {
+  font-weight: normal;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+.dialog h2 {
+  font-weight: normal;
+  font-size: 1em;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+.dialog p {
+  font-size: 1.2em;
+}
+.logo svg {
+  display: block;
+  width: 6em;
+  height: 4em;
+  margin: 0 auto;
+  max-width: 100%;
+}
+button {
+  text-rendering: optimizeLegibility;
+  cursor: pointer;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -webkit-appearance: none;
+  padding: 0.3em 2em;
+  outline: none;
+  font-weight: normal;
+  background: #ba0d83;
+  background: linear-gradient(45deg, #ba0d83, #3b1cce);
+  margin: 0;
+  font-family: inherit;
+  font-size: 1.3em;
+  line-height: 2em;
+  box-shadow: none;
+  border: 0;
+  color: #fff;
+  text-align: center;
+}
+button:active {
+  background: #ba0d83;
+}
+@media (min-width: 769px) {
+  .dialog-scroller {
+    padding: 20px 0;
+  }
+  .dialog-vertical-align-outer {
+    display: table;
+    margin: 0 auto;
+    height: 100%;
+  }
+  .dialog-vertical-align-inner {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .logo {
+    margin: 2em 0 3em;
+  }
+  .dialog {
+    text-align: center;
+  }
+  .dialog h2 {
+    margin-bottom: 3em;
+  }
+  button {
+    margin-bottom: 2em;
+  }
+}
+@media (max-width: 768px) {
+  .banner {
+    height: 8px;
+    overflow: hidden;
+  }
+  .banner p {
+    display: none;
+  }
+  .dialog-scroller {
+    top: 8px;
+  }
+  .dialog {
+    width: 100%;
+    border-radius: 0;
+    paddding: 20px 12px;
+  }
+}

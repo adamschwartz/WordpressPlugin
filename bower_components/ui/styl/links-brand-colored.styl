@@ -1,0 +1,27 @@
+@import colors
+
+a
+  color brandPink
+  text-decoration none
+  -webkit-tap-highlight-color transparent
+
+  &:hover
+    color darken(brandPink, 20%)
+
+  &.with-inherited-color
+    color inherit
+
+    &:hover
+      color brandPink
+
+      &:active
+        color darken(brandPink, 20%)
+
+    &.with-underline
+      display inline-block
+      vertical-align baseline
+      line-height 1
+      border-bottom 1px solid
+
+      &:hover
+        border-bottom-color transparent

@@ -1,0 +1,3474 @@
+/* HTML5 element display
+========================================================================== */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio[controls], canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+
+/* Base
+========================================================================== */
+
+html { font-size: 100%; overflow-y: scroll; -webkit-overflow-scrolling: touch; -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+body { margin: 0; font-size: 13px; line-height: 1.231;}
+
+body, button, input, select, textarea { color: #3e3e3e; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+::-moz-selection { background: #00a6eb; color: #fff; text-shadow: none; }
+::selection { background: #00a6eb; color: #fff; text-shadow: none; }
+
+/* Links
+========================================================================== */
+
+a { color: #057cad; }
+a:visited { color: #057cad; }
+a:focus { outline: 0; }
+a:hover, a:active { outline: 0; text-decoration: none; }
+
+/* Typography
+========================================================================== */
+
+abbr[title] { border-bottom: 1px dotted; }
+
+b, strong { font-weight: bold; }
+
+blockquote { margin: 1em 40px; }
+
+dfn { font-style: italic; }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+pre, code, kbd, samp { font-family: monospace, monospace; _font-family: 'courier new', monospace; font-size: 1em; }
+
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+
+small { font-size: 85%; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+/* Lists
+========================================================================== */
+
+ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+dd { margin: 0 0 0 40px; }
+nav ul, nav ol { list-style: none; margin: 0; padding: 0; }
+
+/* Embedded content
+========================================================================== */
+
+img { border: 0; -ms-interpolation-mode: bicubic; }
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/* Figures
+========================================================================== */
+
+figure { margin: 0; }
+
+/* Forms
+========================================================================== */
+
+form { margin: 0; }
+fieldset { border: 0; margin: 0; padding: 0; }
+
+legend { border: 0; *margin-left: -7px; padding: 0; }
+
+label { cursor: pointer; }
+
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+
+button, input { line-height: normal; *overflow: visible; }
+
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
+input[type="search"] { -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+textarea { overflow: auto; vertical-align: top; }
+
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+
+/* Tables
+========================================================================== */
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* Fonts
+========================================================================== */
+/* font stacks
+.book {
+	font-family:'AvantGardeGothicITCW01B 731069', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.book-oblique {
+	font-family:'AvantGardeGothicITCW01B 731072', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.medium {
+	font-family:'AvantGardeGothicITCW01M 731087', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.medium-oblique {
+	font-family:'AvantGardeGothicITCW01M 731090', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.demi {
+	font-family:'AvantGardeGothicITCW01D 731075', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.demi-oblique {
+	font-family:'AvantGardeGothicITCW01D 731078', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.bold {
+	font-family:'AvantGardeGothicITCW01B 731063', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.bold-oblique {
+	font-family:'AvantGardeGothicITCW01B 731066', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.myriad {
+	font-family:'MyriadMM', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+*/
+
+
+@import url("http://fast.fonts.com/t/1.css?apiType=css&projectid=25423e65-d85d-41b3-89d9-2f04a3b401ad");
+@font-face{
+font-family:"AvantGardeGothicITCW01B 731063";
+src:url("fonts/85564178-fd88-4387-9226-0e632723ca24.eot?iefix") format("eot");}
+@font-face{
+font-family:"AvantGardeGothicITCW01B 731063";
+src:url("fonts/85564178-fd88-4387-9226-0e632723ca24.eot?iefix");
+src:url("fonts/e9a79553-7093-47c7-8d9c-70dc3619e94b.woff") format("woff"),url("fonts/7265b8d0-a67c-4a8b-84aa-273d1759270a.ttf") format("truetype"),url("fonts/75d377f2-28ee-43f8-b231-44f8eba218c4.svg#75d377f2-28ee-43f8-b231-44f8eba218c4") format("svg");
+}
+@font-face{
+font-family:"AvantGardeGothicITCW01B 731066";
+src:url("fonts/e19b7bd0-1d20-4e6a-89ab-a1fa1c037ccb.eot?iefix") format("eot");}
+@font-face{
+font-family:"AvantGardeGothicITCW01B 731066";
+src:url("fonts/e19b7bd0-1d20-4e6a-89ab-a1fa1c037ccb.eot?iefix");
+src:url("fonts/dc20a858-c78b-4d4e-b595-9f2981f7fb01.woff") format("woff"),url("fonts/78e9d6a0-3eab-40f1-bd47-94f2496ca5ab.ttf") format("truetype"),url("fonts/e19a45f4-7180-41a1-9815-c6350e91a172.svg#e19a45f4-7180-41a1-9815-c6350e91a172") format("svg");
+}
+@font-face{
+font-family:"AvantGardeGothicITCW01B 731069";
+src:url("fonts/2a334c60-3e0d-4f43-b0e9-5284ea33961a.eot?iefix") format("eot");}
+@font-face{
+font-family:"AvantGardeGothicITCW01B 731069";
+src:url("fonts/2a334c60-3e0d-4f43-b0e9-5284ea33961a.eot?iefix");
+src:url("fonts/c68f0543-0caf-4988-b234-355520476b8c.woff") format("woff"),url("fonts/2d4f1d98-ddb3-4acc-ae78-c8b1863f780e.ttf") format("truetype"),url("fonts/80f98a03-905d-49e6-8614-cec7c32ca4f2.svg#80f98a03-905d-49e6-8614-cec7c32ca4f2") format("svg");
+}
+@font-face{
+font-family:"AvantGardeGothicITCW01B 731072";
+src:url("fonts/d6c308a1-6908-40bc-b732-0fec02d083ac.eot?iefix") format("eot");}
+@font-face{
+font-family:"AvantGardeGothicITCW01B 731072";
+src:url("fonts/d6c308a1-6908-40bc-b732-0fec02d083ac.eot?iefix");
+src:url("fonts/7571e8e6-97a2-48aa-97c1-b8aeeefc5409.woff") format("woff"),url("fonts/8f1e17ad-3b38-4d51-83f5-4e5469174a77.ttf") format("truetype"),url("fonts/1ee7d1fd-0f7c-4d70-b970-f4dc602eab62.svg#1ee7d1fd-0f7c-4d70-b970-f4dc602eab62") format("svg");
+}
+@font-face{
+font-family:"AvantGardeGothicITCW01D 731075";
+src:url("fonts/b74e5f86-4477-435a-abdf-32d8215f21bc.eot?iefix") format("eot");}
+@font-face{
+font-family:"AvantGardeGothicITCW01D 731075";
+src:url("fonts/b74e5f86-4477-435a-abdf-32d8215f21bc.eot?iefix");
+src:url("fonts/c18aee57-7585-4a8b-9a1c-69d226301d73.woff") format("woff"),url("fonts/44ccbb2b-0fbc-4d95-b1da-0aa73bd26fb0.ttf") format("truetype"),url("fonts/f2de529c-11d2-43b7-be7c-05c5aaeaf133.svg#f2de529c-11d2-43b7-be7c-05c5aaeaf133") format("svg");
+}
+@font-face{
+font-family:"AvantGardeGothicITCW01D 731078";
+src:url("fonts/11458aa4-54c5-4577-b6c7-03209f393c77.eot?iefix") format("eot");}
+@font-face{
+font-family:"AvantGardeGothicITCW01D 731078";
+src:url("fonts/11458aa4-54c5-4577-b6c7-03209f393c77.eot?iefix");
+src:url("fonts/4e9994cb-061f-4678-850d-527f1d636f44.woff") format("woff"),url("fonts/cb81a665-3c91-4f41-a739-dbf62a943154.ttf") format("truetype"),url("fonts/a662b8b1-1550-4c01-9eec-437f22cab36e.svg#a662b8b1-1550-4c01-9eec-437f22cab36e") format("svg");
+}
+@font-face{
+font-family:"AvantGardeGothicITCW01M 731087";
+src:url("fonts/5daf8f81-4f5b-4b44-8fd3-91c56d20e799.eot?iefix") format("eot");}
+@font-face{
+font-family:"AvantGardeGothicITCW01M 731087";
+src:url("fonts/5daf8f81-4f5b-4b44-8fd3-91c56d20e799.eot?iefix");
+src:url("fonts/43b723ac-a6f2-4d5d-9d72-c50aea85ecee.woff") format("woff"),url("fonts/9093e944-c2da-4954-953f-ca2eb3a227dd.ttf") format("truetype"),url("fonts/e3929a31-b148-4180-91be-4b490bdac87d.svg#e3929a31-b148-4180-91be-4b490bdac87d") format("svg");
+}
+@font-face{
+font-family:"AvantGardeGothicITCW01M 731090";
+src:url("fonts/e77dac3e-51a1-44bd-8a8c-042137ec2a31.eot?iefix") format("eot");}
+@font-face{
+font-family:"AvantGardeGothicITCW01M 731090";
+src:url("fonts/e77dac3e-51a1-44bd-8a8c-042137ec2a31.eot?iefix");
+src:url("fonts/8513e971-f071-42cc-9f20-914ffc672da4.woff") format("woff"),url("fonts/9cea694b-1cf4-4bed-91e2-34b5e3f3bbfe.ttf") format("truetype"),url("fonts/14ef78e2-840f-42a0-ade1-5c2aa453ac56.svg#14ef78e2-840f-42a0-ade1-5c2aa453ac56") format("svg");
+}
+@font-face{
+font-family:"MyriadMM";
+src:url("fonts/MyriadMM.eot?iefix") format("eot");}
+@font-face{
+font-family:"MyriadMM";
+src:url("fonts/MyriadMM.eot?iefix");
+src:url("fonts/MyriadMM.woff") format("woff"),url("fonts/MyriadMM.ttf") format("truetype"),url("fonts/MyriadMM.svg") format("svg");
+}
+
+@font-face{
+    font-family:"Didot";
+    src:url("fonts/didot.eot?iefix");
+    src:url("fonts/didot.woff") format("woff"),url("fonts/didot.ttf") format("truetype"),url("fonts/didot.svg") format("svg");
+}
+
+@font-face{
+    font-family:"Didot Bold";
+    src:url("fonts/didot-bold.eot?iefix");
+    src:url("fonts/didot-bold.woff") format("woff"),url("fonts/didot-bold.ttf") format("truetype"),url("fonts/didot-bold.svg") format("svg");
+}
+
+@font-face{
+    font-family:"Didot Italic";
+    src:url("fonts/didot-italic.eot?iefix");
+    src:url("fonts/didot-italic.woff") format("woff"),url("fonts/didot-italic.ttf") format("truetype"),url("fonts/didot-italic.svg") format("svg");
+}
+
+
+h1,h2,h3,h4,h5 {
+	font-family: 'AvantGardeGothicITCW01B 731069', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: normal;
+}
+h1 {
+	font-size: 30px;
+}
+h2 {
+	font-size: 25px;
+}
+h3 {
+	font-size: 18px;
+}
+h4 {
+	font-size: 14px;
+}
+h5 {
+	font-size: 12px;
+}
+
+
+/* Hero -- All Sizes
+========================================================================== */
+#hero {
+	position: relative;
+	z-index: 2;
+	width: 100%;
+	overflow: hidden;
+}
+
+#hero #hero-inner {
+	position: absolute;
+	height: 100%;
+}
+
+#hero #hero-inner .thumb-progress {
+	display: none;
+}
+
+	#hero .thumb-progress {
+		position: absolute;
+		z-index: 99;
+		background: #aaa;
+		height: 3px;
+				box-sizing: border-box;
+	       -moz-box-sizing: border-box;
+	    -webkit-box-sizing: border-box;
+	}
+
+		#hero .thumb-progress div {
+			background: #e1102c;
+			height: 100%;
+			width: 0;
+		}
+
+#hero #hero-inner .hero-frame {
+	float: left;
+	height: 100%;
+}
+
+#hero #hero-inner .hero-frame .thumb {
+	/* hide the original thumbs */
+	display: none;
+}
+
+	#hero .thumb {
+		/* new thumbs will be cloned into the view */
+		position: absolute;
+		z-index: 99;
+		width: 132px;
+		height: 84px;
+		cursor: pointer;
+				box-sizing: border-box;
+	       -moz-box-sizing: border-box;
+	    -webkit-box-sizing: border-box;
+	}
+
+#hero #hero-inner .hero-frame .hero-unit {
+	overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+	.hero-unit .video-overlay,
+	.hero-unit .followup-overlay {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 99;
+    }
+
+    .hero-unit .video-overlay {
+    	background: #000;
+    }
+
+    .hero-unit .followup-overlay {
+    	background: rgba(0, 0, 0, .4);
+    }
+
+	#hero #hero-inner .hero-frame .hero-unit .hero-unit-inner,
+	#hero #hero-inner .hero-frame .hero-unit .video-overlay .video-overlay-inner,
+	#hero #hero-inner .hero-frame .hero-unit .followup-overlay .followup-overlay-inner {
+		position: relative;
+		overflow: hidden;
+		margin: 0 auto;
+	}
+
+
+/* Mobile Styles
+========================================================================== */
+
+@media only screen and (max-width: 740px) {
+
+body {
+	background: #d1cfcf;
+}
+
+#container {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	min-width: 310px;
+}
+	/* Mobile Header
+	========================================================================== */
+	header {
+		height: 111px;
+		background: url(http://cdn.www.sony.com/css/img/s/header-bg.gif) repeat-x;
+		position: relative;
+		z-index: 10;
+	}
+		#logo {
+			display: block;
+			width: 100px;
+			height: 35px;
+			text-indent: -9999px;
+			background: url(../img/sprite-vertical.png) no-repeat left top;
+			margin: 0 auto;
+			position: relative;
+			top: 20px;
+		}
+
+		#search-button {
+			position: absolute;
+			top: 20px;
+			right: 0;
+			margin: 0;
+		}
+			#search-button a {
+				display: block;
+				width: 46px;
+				height: 36px;
+				background: url(../img/search-field-button-mobile.png) 10px 50% no-repeat no-repeat;
+				text-indent: -9999px;
+			}
+		#search-button.open {
+			background: #000;
+		}
+		#mobile-language-indicator {
+			display: block;
+			position: absolute;
+			top: 28px;
+			left: 20px;
+			color: #fff;
+			font-size: 9px;
+			text-align: center;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		#search-dropdown-arrow {
+			display: none;
+			position: absolute;
+			top: 58px;
+			right: 17px;
+			width: 19px;
+			height: 8px;
+			background: transparent url(../img/search-arrow-mobile.png) right 0 no-repeat;
+		}
+		#search {
+			margin: 0;
+			padding: 0 0 0 0;
+			position: absolute;
+			top: 66px;
+			background: #404040;
+			width: 100%;
+			z-index: 11;
+			display: none;
+		}
+		#search.show {
+			display: block;
+		}
+			#search-form {
+				padding: 10px;
+			}
+			#search-input-wrapper {
+				overflow: hidden;
+				margin: 0;
+			}
+				#search #search-input {
+					height: 36px;
+					line-height: 36px;
+					font-family: 'AvantGardeGothicITCW01B 731069', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+					font-size: 14px;
+					border: 0;
+					padding: 0 10px;
+					color: #464545;
+					background: #fff;
+					width: 100%;
+				}
+
+				#search #search-btn {
+					display: none;
+				}
+
+		#social-media {
+			display: none;
+		}
+
+	/* Mobile Nav
+	========================================================================== */
+
+	nav {
+		position: absolute;
+		top: 75px;
+		z-index: 10;
+		display: none;
+	}
+		.s nav {
+			display: block;
+		}
+		nav .content {
+			position: absolute;
+			background: #212121;
+		}
+			nav ul {
+				margin: 0;
+				width: 480px;
+			}
+
+			/* top level */
+			nav ul#nav-list {
+			}
+				nav ul#nav-list > li {
+					float: left;
+					display: inline;
+					height: 32px;
+					border-top: 4px solid #212121;
+				}
+					nav ul#nav-list > li > a {
+						font-size: 9px;
+						border-right: 1px solid #000;
+						padding: 0 15px;
+						margin-top: 5px;
+					}
+					nav ul#nav-list > li:first-child a {
+					}
+					nav ul#nav-list > li:last-child a {
+						border-right: 0;
+					}
+				nav ul#nav-list li a:link,
+				nav ul#nav-list li a:visited {
+					display: block;
+					color: #fff;
+					text-decoration: none;
+					font-family:'AvantGardeGothicITCW01M 731087', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+					-webkit-font-smoothing: antialiased;
+				}
+					nav ul#nav-list li > ul {
+						position: absolute;
+					}
+						nav ul#nav-list > li.hover {
+							background: #3d3f40;
+							border-top: 4px solid #027aaf;
+						}
+							nav ul#nav-list > li.hover > a {
+								border-right: 1px solid #3d3f40;
+							}
+							nav ul#nav-list > li.hover > ul {
+								display: block;
+								top: 36px;
+								left: 0 !important; /* important needed to override inline style inserted by js */
+								background: #3d3f40;
+							}
+								nav ul#nav-list > li.hover > ul li {
+									min-height: 36px;
+									line-height: 36px;
+								}
+								nav ul#nav-list > li.hover > ul > li {
+									border-bottom: 1px solid #212121;
+								}
+									nav ul#nav-list > li.hover > ul li a {
+										padding: 0 15px;
+									}
+									nav ul#nav-list > li.hover > ul li.current {
+										background: #0181ba url(../img/nav-sublevel-hover-bg.png) 0 0 repeat-x;
+									}
+										nav ul#nav-list > li.hover > ul li.current > a span {
+											padding-right: 18px;
+											background: transparent url(../img/nav-sublevel-carrot-mobile.png) right 50% no-repeat;
+										}
+										nav ul#nav-list > li.hover > ul li.current > ul {
+											position: static;
+											left: 0 !important; /* important needed to override inline style inserted by js */
+											background: #292929;
+											padding: 10px 0;
+										}
+											nav ul#nav-list > li.hover > ul li.current > ul > li {
+
+											}
+												nav ul#nav-list > li.hover > ul li.current > ul > li a {
+													color: #00a6eb;
+													padding: 0 30px;
+												}
+												nav ul#nav-list > li.hover > ul li.current > ul > li.current {
+													background: transparent;
+												}
+													nav ul#nav-list > li.hover > ul li.current > ul > li.current > a > span {
+														padding-right: 18px;
+														background: transparent url(../img/nav-sublevel-carrot-mobile-blue.png) right 50% no-repeat;
+													}
+														nav ul#nav-list > li.hover > ul li.current > ul > li.current ul {
+															padding: 0 0 10px 0;
+														}
+															nav ul#nav-list > li.hover > ul li.current > ul > li.current ul li a {
+																color: #fff;
+																padding: 0 45px;
+															}
+
+
+	/* Hero -- Mobile
+	========================================================================== */
+	#hero {
+		height: 401px;
+	}
+
+	#hero .thumb {
+		display: none;
+	}
+
+	#hero #hero-inner > div .thumb {
+		display: none;
+	}
+
+	#hero #hero-inner .hero-frame .hero-unit {
+		height: 401px;
+	}
+
+	#hero #hero-inner .hero-frame .hero-unit .hero-unit-inner,
+	#hero #hero-inner .hero-frame .hero-unit .video-overlay .video-overlay-inner,
+	#hero #hero-inner .hero-frame .hero-unit .followup-overlay .followup-overlay-inner {
+		width: 480px;
+	}
+
+	#hero .hero-unit .video-overlay .video-overlay-inner iframe {
+        width: 480px;
+        height: 401px;
+    }
+
+
+	/* Alert
+	========================================================================== */
+	#alert {
+		background: #fff;
+	}
+		#alert .content {
+			background: #fff url(http://cdn.www.sony.com/css/img/s/alert-bg.gif) repeat-x left bottom;
+			padding: 13px 20px 10px;
+		}
+		#alert .wrapper {
+			position: relative;
+		}
+			#alert h1 {
+				font-size: 17px;
+				color: #03648c;
+				margin: 0 0 10px 0;
+				font-family:'AvantGardeGothicITCW01D 731075', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+			}
+			#alert .description {
+				font-size: 13px;
+				color: #696969;
+				margin: 0 0 10px 0;
+			}
+			#alert .link {
+				margin: 0;
+			}
+				#alert .link a {
+					font-size: 12px;
+					font-family:'AvantGardeGothicITCW01D 731075', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+					color: #3e3e3e;
+					text-transform: uppercase;
+					text-decoration: none;
+					background: url(http://cdn.www.sony.com/css/img/icon-arrow-red-sml.gif) no-repeat right center;
+					padding: 0 14px 0 0;
+				}
+				#alert .link a:hover {
+					color: #057CAD;
+				}
+			#alert .close-btn {
+				position: absolute;
+				right: -20px;
+				top: -13px;
+				margin: 0;
+			}
+				#alert .close-btn a {
+					display: block;
+					width: 44px;
+					height: 44px;
+					background: url(http://cdn.www.sony.com/css/img/s/icon-x-sml.gif) no-repeat center center;
+					text-indent: -9999px;
+				}
+				#alert .close-btn a:hover {
+					filter:alpha(opacity=60);
+					-moz-opacity:0.6;
+					-khtml-opacity: 0.6;
+					opacity: 0.6;
+				}
+
+
+	/* Nav
+	========================================================================== */
+	#tabs {
+
+	}
+		#tabs .content {
+
+		}
+			#tab-nav {
+				display: none;
+			}
+			#tab-dropdown {
+				background: #fefefe url(http://cdn.www.sony.com/css/img/s/dropdown-bg-gradient.gif) repeat-x left bottom;
+				border-bottom: 1px solid #e5e5e5;
+				height: 60px;
+				overflow: hidden;
+			}
+				#tab-dropdown p {
+					float: left;
+					width: 65px;
+					padding: 21px 0 0 20px;
+					font-size: 9px;
+					color: #676767;
+					margin: 0;
+					text-transform: uppercase;
+					font-weight: bold;
+				}
+				#tab-dropdown .select {
+					margin: 0 0 0 85px;
+					padding: 13px 20px 0 0;
+				}
+					#tab-dropdown select {
+						width: 100%;
+						font-size: 15px;
+						text-transform: uppercase;
+						color: #323232;
+						font-weight: bold;
+						height: 32px;
+						vertical-align: middle;
+					}
+		#tab-content {
+			background: #ffffff;
+		}
+			#tab-content .content {
+
+			}
+				#tab-content .featured {
+					padding: 25px 20px 10px 20px;
+					overflow: hidden;
+				}
+					#tab-content .featured a {
+						text-decoration: none;
+					}
+					#tab-content .featured .img {
+						margin: 0;
+						text-align: center;
+					}
+						#tab-content .featured .img a {
+							max-width: 390px;
+							display: block;
+							margin: 0 auto;
+							position: relative;
+						}
+						#tab-content .featured .img img {
+							width: 100%;
+						}
+
+						#tab-content .featured .play-icon {
+							display: block;
+							width: 100%;
+							height: 100%;
+							position: absolute;
+							top: 0;
+							left: 0;
+							z-index: 2;
+							background: url(http://cdn.www.sony.com/css/img/icon-play.png) no-repeat center center;
+							cursor: pointer;
+						}
+					#tab-content .featured .video {
+						display: none;
+
+					}
+
+					#tab-content .featured .description {
+
+					}
+					#tab-content .featured .btn {
+
+					}
+					#tab-content .featured h3 {
+						font-size: 17px;
+						color: #4a4a4a;
+						text-transform: uppercase;
+						margin: 0 0 10px 0;
+						font-family:'AvantGardeGothicITCW01D 731075', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+					}
+					#tab-content .featured a:hover h3 {
+						color: #057cad;
+					}
+					#tab-content .featured p {
+						font-size: 12px;
+						color: #5e5e5e;
+						margin: 0 0 10px 0;
+					}
+						#tab-content .featured .btn {
+							float: left;
+							overflow: hidden;
+						}
+							#tab-content .featured .btn a {
+								display: block;
+								font-size: 13px;
+								color: #fff;
+								text-decoration: none;
+								text-transform: uppercase;
+								background: url(http://cdn.www.sony.com/css/img/s/btn-bg-middle.gif) repeat-x left top;
+								font-family:'AvantGardeGothicITCW01D 731075', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+								text-shadow: #016b98 2px 1px 2px;
+								float: left;
+								overflow: hidden;
+							}
+								#tab-content .featured .btn a .gradient {
+									background: url(http://cdn.www.sony.com/css/img/s/btn-bg-right.gif) no-repeat right top;
+									display: block;
+									overflow: hidden;
+									float: left;
+								}
+									#tab-content .featured .btn a .arrow {
+										display: block;
+										height: 33px;
+										line-height: 28px;
+										padding: 0 37px 0 12px;
+										background: url(http://cdn.www.sony.com/css/img/s/btn-bg-left.gif) no-repeat left top;
+										float: left;
+									}
+					#tab-content .featured .twitter {
+						float: left;
+						height: 26px;
+						border-left: 1px solid #d1d1d1;
+						margin: 0 0 0 21px;
+						padding: 7px 0 0 16px;
+						position: relative;
+					}
+						#tab-content .featured .twitter a {
+							display: block;
+							width: 19px;
+							height: 18px;
+							background: url(http://cdn.www.sony.com/css/img/icon-twitter-med.gif) no-repeat left bottom;
+							text-indent: -9999px;
+						}
+						#tab-content .featured .twitter-tooltip {
+							position: absolute;
+							display: block;
+							width: 49px;
+							height: 28px;
+							background: url(http://cdn.www.sony.com/css/img/twitter-tooltip.png) no-repeat;
+							z-index: 10;
+							top: -29px;
+							right: -14px;
+							display: none;
+						}
+					#tab-content .featured .pinterest {
+						float: left;
+						height: 21px;
+						border-left: 1px solid #d1d1d1;
+						margin: 0 0 0 16px;
+						padding: 2px 0 0 16px;
+						zoom:1;
+						border-top: 1px solid #fff;
+						border-right: 1px solid #fff;
+						border-bottom: 1px solid #fff;
+					}
+						#tab-content .featured .pinterest a {
+
+						}
+					#tab-content .featured .google {
+						float: left;
+						margin: 0 0 0 14px;
+						padding: 9px 0 0 0;
+					}
+					#tab-content .featured .facebook {
+						float: left;
+						margin: 0 0 0 14px;
+						width: 51px;
+						height: 23px;
+						overflow: hidden;
+						padding: 7px 0 0 0;
+					}
+						#tab-content .featured .facebook iframe {
+							float: left;
+							width: 51px !important;
+						}
+
+			#tab-content .supporting {
+				padding: 40px 20px 0 20px;
+				background: url(http://cdn.www.sony.com/css/img/s/divider-shadow.gif) no-repeat center top;
+				overflow: hidden;
+			}
+				#tab-content .supporting .img {
+					margin: 0 0 3px 0;
+					line-height: 0;
+					font-size: 0;
+				}
+				#tab-content .supporting a {
+					text-decoration: none;
+					display: block;
+					margin: 0 auto;
+					width: 205px;
+					overflow: hidden;
+				}
+				#tab-content .supporting h4 {
+					font-size: 15px;
+					color: #4a4a4a;
+					text-transform: uppercase;
+					font-family:'AvantGardeGothicITCW01D 731075', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+					margin: 0 0 10px 0;
+				}
+				#tab-content .supporting a:hover h4 {
+					color: #057CAD;
+				}
+				#tab-content .supporting p {
+					margin: 0 0 23px 0;
+					color: #5e5e5e;
+				}
+				#tab-content .supporting-v2 p {
+					margin: 0 auto 23px auto;
+					width: 205px;
+				}
+				#tab-content .supporting p a {
+					color: #5e5e5e;
+				}
+					#tab-content .supporting .pin-it-button {
+						display: inline;
+					}
+						#tab-content .supporting .pin-it-button img {
+							vertical-align: top;
+						}
+			#tab-content .brand-bin {
+				padding: 25px 20px 30px 20px;
+				background: #fff url(http://cdn.www.sony.com/css/img/s/divider-shadow.gif) no-repeat center top;
+				overflow: hidden;
+			}
+				#tab-content .brand-bin h4 {
+					font-size: 13px;
+					color: #4a4a4a;
+					text-transform: uppercase;
+					font-family:'AvantGardeGothicITCW01D 731075', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+					margin: 0 0 14px 0;
+				}
+				#tab-content .brand-bin ul {
+					padding: 0 0 1px 0;
+					margin: 0;
+				}
+					#tab-content .brand-bin li {
+						list-style: none;
+						padding: 0 0;
+						width: 50%;
+						float: left;
+					}
+					#tab-content .brand-bin li.column-2 {
+						margin-left: 50%;
+					}
+						#tab-content .brand-bin a {
+							text-decoration: none;
+							font-weight: bold;
+							font-size: 12px;
+							display: block;
+							padding: 10px 0 0px 12px;
+							background: url(http://cdn.www.sony.com/css/img/icon-arrow-gray-blue-sml.gif) no-repeat left 14px;
+						}
+						#tab-content .brand-bin a:hover {
+							color: #4a4a4a;
+							background-position: left -10px;
+						}
+
+
+	/* Promos
+	========================================================================== */
+	#promos {
+		background: url(http://cdn.www.sony.com/css/img/s/divider-shadow.png) no-repeat center top;
+
+	}
+		#promos .content {
+			overflow: hidden;
+			background: url(http://cdn.www.sony.com/css/img/s/bg-gradient-btm.gif) repeat-x center bottom;
+			padding: 20px 20px;
+		}
+			#promos .promo-item {
+				margin:0 0 5px 0;
+				padding: 0;
+			}
+			#promos .promo-item.first,
+			#promos .promo-item.third {
+				float: left;
+			}
+			#promos .promo-item.second,
+			#promos .promo-item.fourth {
+				float: right;
+			}
+				#promos a {
+					display: block;
+					width: 100%;
+					height: 193px;
+					text-decoration: none;
+					position: relative;
+					overflow: hidden;
+					cursor: pointer;
+				}
+					#promos .img {
+						margin: 0;
+						position: relative;
+						z-index: 1;
+						overflow: hidden;
+						width: 100%;
+					}
+						#promos .img img {
+
+						}
+					#promos .description {
+						position: absolute;
+						z-index: 2;
+						background: url(http://cdn.www.sony.com/css/img/90-perc-black.png);
+						width: 100%;
+						bottom: 0;
+					}
+						#promos h3 {
+							font-size: 15px;
+							color: #fff;
+							margin: 0;
+							padding: 9px 1px 11px 10px;
+						}
+						#promos a:hover h3 {
+							color: #39b4eb;
+						}
+						#promos .description p {
+							font-size: 12px;
+							color: #fff;
+							margin: 0;
+							padding: 0 0 12px;
+							display: none;
+							position: absolute;
+							left: -9999px;
+						}
+	/* News and social
+	========================================================================== */
+	#news-and-social {
+		background: #ebebeb url(http://cdn.www.sony.com/css/img/bg-gradient-btm.gif) repeat-x;
+	}
+
+	/* News
+	========================================================================== */
+	#news {
+
+	}
+		#news .content {
+			width: auto;
+		}
+			#news .header {
+				height: 40px;
+				overflow: hidden;
+				background: #fdfdfd;
+				border-bottom: 1px solid #e2e3e3;
+			}
+				#news .header h2 {
+					float: left;
+					font-size: 15px;
+					color: #515151;
+					font-family:'AvantGardeGothicITCW01D 731075', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+					padding: 11px 35px 4px 20px;
+					margin: 0;
+					text-transform: uppercase;
+					background: url(http://cdn.www.sony.com/css/img/icon-newspaper.gif) no-repeat right 11px;
+				}
+				#news .header .btn {
+					float: right;
+					margin: 0;
+					padding: 0 0 0 9px;
+					background: url(http://cdn.www.sony.com/css/img/news-shadow.gif) no-repeat left top;
+				}
+					#news .header .btn a {
+						font-size: 9px;
+						font-weight: bold;
+						display: block;
+						width: 77px;
+						height: 25px;
+						padding: 16px 0 0 13px;
+						background: url(http://cdn.www.sony.com/css/img/icon-arrow-blue-sml.gif) no-repeat 68px 17px;
+						text-decoration: none;
+						text-transform: uppercase;
+						color: #767676;
+						zoom:1;
+					}
+					#news .header .btn a:hover {
+						color: #057CAD;
+					}
+		#news ul {
+			margin: 0 0 34px 0;
+			padding: 10px 0 15px 0;
+			border-bottom: 4px solid #757575;
+		}
+			#news ul li {
+				list-style: none;
+				padding: 3px 0 3px 0;
+			}
+				#news a {
+					display: block;
+					overflow: hidden;
+					text-decoration: none;
+					cursor: pointer;
+					padding-left:5px ;
+				}
+				#news a:hover {
+					background: #fff;
+				}
+					#news .date {
+						float: left;
+						width: 65px;
+						height: 46px;
+						background: url(http://cdn.www.sony.com/css/img/news-divider.gif) no-repeat right 4px;
+						padding: 5px 0 0 0;
+					}
+						#news .date .month {
+							font-size: 9px;
+							font-weight: bold;
+							color: #3b3a3a;
+							text-align: center;
+							margin: 0;
+						}
+						#news .date .day {
+							margin: 0;
+							font-size: 30px;
+							color: #7b7b7b;
+							text-align: center;
+							font-weight: bold;
+						}
+						#news a:hover .date .day {
+							color: #00a6eb;
+						}
+					#news .description {
+						margin: 0 0 0 87px;
+						padding: 7px 20px 5px 0;
+						color: #3e3e3e;
+					}
+					.ie7 #news .description {
+						padding-top:16px;
+					}
+					#news a:hover .description {
+						color: #057CAD;
+					}
+						#news .description .table {
+							display: table;
+							height: 41px;
+						}
+							#news .description .table-cell {
+								display: table-cell;
+								vertical-align: middle;
+							}
+
+	/* Social
+	========================================================================== */
+	#social {
+
+	}
+		#social .content {
+			width: auto;
+			padding-bottom: 33px;
+		}
+			#social .header {
+				height: 40px;
+				overflow: hidden;
+				background: #fdfdfd;
+				border-bottom: 1px solid #e2e3e3;
+			}
+				#social .header h2 {
+					float: left;
+					font-size: 15px;
+					color: #515151;
+					font-family:'AvantGardeGothicITCW01D 731075', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+					padding: 11px 36px 0 15px;
+					margin: 0;
+					text-transform: uppercase;
+					background: url(http://cdn.www.sony.com/css/img/icon-chat-bubbles.gif) no-repeat right 12px;
+				}
+
+				#social .header .index {
+					float: right;
+					background: url(http://cdn.www.sony.com/css/img/sprite-vertical.gif) no-repeat left -1261px;
+					padding-left: 7px;
+					padding-right: 10px;
+					height: 40px;
+					margin: 0;
+				}
+					#social .header .index a {
+							background: url(http://cdn.www.sony.com/css/img/sprite-vertical.gif) no-repeat right -1219px;
+							font-size: 9px;
+							font-weight: bold;
+							text-transform: uppercase;
+							color: #767676;
+							text-decoration: none;
+							padding-right: 12px;
+							height: 40px;
+							line-height: 43px;
+							padding-left: 12px;
+							display: block;
+						}
+						#social .header .index a:hover {
+							color: #000;
+						}
+				#social #twitter-feed {
+					padding: 9px 0 14px;
+				}
+				#social .tweet {
+					overflow: hidden;
+					padding: 12px 10px 7px 14px;
+				}
+				#social .tweet.hover {
+					background: #fff;
+				}
+					#social .tweet .img {
+						float: left;
+						margin: 0
+					}
+						#social .tweet .img a {
+							display: block;
+						}
+							#social .tweet .img img {
+								background: #fff;
+								width: 41px;
+							}
+					#social .tweet .details {
+						margin: 0 0 0 62px;
+					}
+						#social .tweet .text {
+							font-size: 12px;
+							margin: 2px 0 3px 0;
+						}
+							#social .tweet .text a {
+								text-decoration: none;
+							}
+							#social .tweet .text a:hover {
+								text-decoration: underline;
+							}
+						#social .tweet ul {
+							overflow: hidden;
+							margin: 0;
+							padding: 0;
+						}
+							#social .tweet li {
+								float: left;
+								padding-right: 10px;
+								margin: 0;
+								list-style: none;
+								font-size: 10px;
+								color: #9c9c9c;
+							}
+
+							#social .tweet .time {
+								padding-top: 3px;
+							}
+
+							#social .tweet .reply,
+							#social .tweet .retweet,
+							#social .tweet .favorite {
+
+							}
+							#social .tweet .favorite {
+								padding-right: 0;
+							}
+							#social .tweet.hover .reply,
+							#social .tweet.hover .retweet,
+							#social .tweet.hover .favorite {
+
+							}
+								#social .tweet li a {
+									font-weight: bold;
+									text-decoration: none;
+									display: block;
+									padding-top: 3px;
+								}
+								#social .tweet li a:hover {
+									text-decoration: underline;
+								}
+								#social .tweet .reply a {
+
+								}
+								#social .tweet .retweet a {
+
+								}
+								#social .tweet .favorite a {
+
+								}
+
+	/* Footer
+	========================================================================== */
+	#footer {
+		background: #1a1a1a url(http://cdn.www.sony.com/css/img/s/footer-gradient.gif) repeat-x left top;
+		height: 310px;
+		position: relative;
+		width: 100%;
+	}
+		#footer .content {
+			position: relative;
+		}
+		 #footer-logo {
+			position: absolute;
+			width: 81px;
+			height: 29px;
+			background: url(../img/logo-footer.png) no-repeat;
+			text-indent: -9999px;
+			margin: 0;
+			top: 33px;
+			left: 20px;
+		}
+
+	#footer .corp-btn {
+		position: absolute;
+		margin: 0;
+		top: 32px;
+		right: 24px;
+	}
+		#footer a.btn {
+			display: block;
+			height: 24px;
+			color: #fff;
+			font-weight: bold;
+			text-decoration: none;
+			background: url(http://cdn.www.sony.com/css/img/btn-bg-gradient-gray.gif) repeat-x left top;
+			padding: 0 11px 0 0;
+			font-size: 9px;
+			text-transform: uppercase;
+		}
+
+		#footer a:hover.btn {
+			color: #27b2ef;
+		}
+		#footer .corporate-info.hover .corp-btn a.btn,
+		#footer .corporate-info.clicked .corp-btn a.btn {
+			background-position: left bottom;
+			color: #27b2ef;
+		}
+			#footer a.btn span {
+				padding: 6px 15px 0 10px;
+				background-repeat: no-repeat;
+				background-position: right 7px;
+				display: block;
+			}
+			#footer a:hover.btn span {
+				background-position: right -23px;
+			}
+			#footer .corp-btn a span {
+				background-image: url(http://cdn.www.sony.com/css/img/icon-plus-blue-gray-sml.gif);
+			}
+			#footer .global-home a span {
+				background-image: url(http://cdn.www.sony.com/css/img/icon-arrow-blue-gray-sml.gif);
+			}
+	#footer .corp-links {
+		position: absolute;
+		bottom: -32px;
+		right: 0;
+		background: url(http://cdn.www.sony.com/css/img/corp-top.png) no-repeat;
+		width: 256px;
+		padding: 43px 0 0 0;
+		display: none;
+	}
+		#footer .corp-links ul {
+			margin: 0;
+			padding: 0 24px 10px 24px;
+			background: url(http://cdn.www.sony.com/css/img/corp-middle.png) repeat-y center top;
+		}
+			#footer .corp-links li {
+				list-style: none;
+				padding: 4px 0 4px 0;
+			}
+				#footer .corp-links a {
+					font-size: 11px;
+					font-weight: bold;
+					color: #ecebeb;
+					text-decoration: none;
+					display: block;
+					padding: 5px 20px 5px 10px;
+					text-align: right;
+				}
+				#footer .corp-links a:hover {
+					color: #0aaef7;
+					background: #292929;
+				}
+					#footer .corp-links span {
+
+						padding: 0 0 0 11px;
+					}
+					#footer .corp-links a:hover span {
+						background: url(http://cdn.www.sony.com/css/img/icon-arrow-gray-sml.gif) no-repeat left center;
+					}
+	#footer .corporate-info.hover .corp-links,
+	#footer .corporate-info.clicked .corp-links {
+		display: block;
+	}
+
+	#footer .global-home {
+		position: absolute;
+		margin: 0;
+		right: 24px;
+		top: 70px;
+		z-index: 2;
+	}
+
+	#footer .shop-by-phone {
+		position: absolute;
+		margin: 0;
+		right: 24px;
+		top: 108px;
+		z-index: 2;
+	}
+
+	#footer .main-links {
+		margin: 0;
+		position: absolute;
+		top: 100px;
+		left: 20px;
+		width: 271px;
+		z-index: 1;
+		padding: 0;
+	}
+	#footer .main-links.bottom {
+		top: 170px;
+	}
+		#footer .main-links li {
+			list-style: none;
+
+		}
+			#footer .main-links a {
+				display: block;
+				font-size: 12px;
+				color: #fff;
+				text-decoration: none;
+				padding: 8px 0 7px;
+				font-weight: bold;
+			}
+			#footer .main-links a:hover {
+				color: #15b1e4;
+			}
+	#footer .secondary-links {
+		margin: 0;
+		position: absolute;
+		top: 250px;
+		/*top: 281px;*/
+		left: 20px;
+		width: 190px;
+		z-index: 1;
+		padding: 0;
+	}
+		#footer .secondary-links li {
+			list-style: none;
+			font-size: 10px;
+			color: #979696;
+
+		}
+		#footer .secondary-links li.first {
+			margin-bottom: -61px;
+		}
+			#footer .secondary-links a {
+				display: block;
+				font-size: 12px;
+				color: #fff;
+				text-decoration: none;
+				padding: 8px 0;
+				font-weight: bold;
+			}
+
+}
+
+/* Non-semantic helper classes
+/* ================================================================================================================== */
+/* ================================================================================================================== */
+/* ================================================================================================================== */
+
+/* Hide for both screenreaders and browsers:
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+.hidden { display: none; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: by Jon Neal.
+  www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */
+.visually-hidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+/* Extends the .visually-hidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638 */
+.visually-hidden.focusable:active, .visually-hidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/* Contain floats: nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+/*add outline for testing*/
+.test { border: 1px solid red;}
+
+/* Media Queries for Responsive Design
+========================================================================== */
+
+
+
+
+
+
+
+
+/* 480 to 740
+/* ================================================================================================================== */
+/* ================================================================================================================== */
+/* ================================================================================================================== */
+@media only screen and (min-width: 480px) and (max-width: 740px) {
+	/* Style adjustments for viewports 480px and over */
+	#container {
+		width: 480px;
+		margin: 0 auto;
+	}
+
+	#tab-content .supporting #sub-promo-1 {
+		float: left;
+		margin-right: 30px;
+		width: 205px;
+	}
+	#tab-content .supporting #sub-promo-2 {
+		float: right;
+		width: 205px;
+	}
+	#tab-content .supporting a {
+
+	}
+
+	#tab-content .supporting a:first-child {
+
+	}
+
+}
+
+
+
+
+
+
+/* 740
+/* ================================================================================================================== */
+/* ================================================================================================================== */
+/* ================================================================================================================== */
+@media only screen and (min-width: 740px) {
+  /* Style adjustments for viewports 740px and over */
+	body {
+		background: #1a1a1a;
+	}
+
+	/* Header
+	========================================================================== */
+	header {
+		background: #000 url(http://cdn.www.sony.com/css/img/header-bg-gradient.gif) repeat-x left bottom;
+		height: 104px;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 3;
+	}
+		header .content {
+			margin: 0 auto;
+			width: 740px;
+			position: relative;
+		}
+			header #logo {
+				position: absolute;
+				left: 0;
+				top: 50px;
+				width: 100px;
+				height: 35px;
+				text-indent: -9999px;
+				margin: 0;
+				background: url(../img/sprite-vertical.png) no-repeat left top;
+			}
+			#mobile-language-indicator {
+				display: none;
+			}
+			#social-media {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 27px;
+				background: #282828;
+			}
+				#social-media ul {
+					float: right;
+					margin: 0;
+					padding: 0;
+					border-right: 1px solid #000;
+				}
+					#social-media ul li {
+						float: left;
+						display: inline;
+						list-style: none;
+						margin: 0;
+					}
+					#social-media ul li:last-child {
+						margin: 0;
+					}
+						#social-media ul li a:link,
+						#social-media ul li a:visited {
+							display: block;
+							width: 27px;
+							height: 27px;
+							background-repeat: no-repeat;
+							text-indent: -9999px;
+							border-left: 1px solid #000;
+						}
+						#social-media .facebook > a {
+							background: url(../img/social-sprite.png) 0 0 no-repeat;
+						}
+						#social-media .facebook:hover > a,
+						#social-media .facebook:active > a {
+							background-position: 0 -27px;
+						}
+						#social-media .twitter > a {
+							background: url(../img/social-sprite.png) -27px 0 no-repeat;
+						}
+						#social-media .twitter:hover > a,
+						#social-media .twitter:active > a {
+							background-position: -27px -27px;
+						}
+						#social-media .google-plus > a {
+							background: url(../img/social-sprite.png) -54px 0 no-repeat;
+						}
+						#social-media .google-plus:hover > a,
+						#social-media .google-plus:active > a {
+							background-position: -54px -27px;
+						}
+						#social-media .youtube > a {
+							background: url(../img/social-sprite.png) -81px 0 no-repeat;
+						}
+						#social-media .youtube:hover > a,
+						#social-media .youtube:active > a {
+							background-position: -81px -27px;
+						}
+						#social-media .foursquare > a {
+							background: url(../img/social-sprite.png) -108px 0 no-repeat;
+						}
+						#social-media .foursquare:hover > a,
+						#social-media .foursquare:active > a {
+							background-position: -108px -27px;
+						}
+
+						#social-media ul li.language > a:link,
+						#social-media ul li.language > a:visited {
+							text-indent: 0;
+							width: 56px;
+							line-height: 30px;
+							padding: 0 16px;
+							color: #fff;
+							font-size: 14px;
+							text-decoration: none;
+							font-weight: bold;
+							-webkit-font-smoothing: antialiased;
+						}
+
+						#social-media ul li.language > a.usable {
+							background: transparent url(../img/language-dropdown-arrow.png) 72px 50% no-repeat;
+							padding-right: 20px;
+						}
+
+						#social-media ul li.language > a span img {
+							padding-right: 8px;
+						}
+
+						#social-media ul li.language #choose-language {
+							display: none;
+							position: absolute;
+							right: 0;
+							top: 36px;
+							z-index: 99;
+						}
+							#social-media ul li.language #choose-language .arrow {
+								position: relative;
+								height: 12px;
+								background: transparent url(../img/flyout-arrow.png) 168px 0 no-repeat;
+							}
+							#social-media ul li.language #choose-language ul {
+								float: none;
+								background: #212121;
+								border: none;
+										box-shadow: 0 0 25px rgba(0, 0, 0, .45);
+								   -moz-box-shadow: 0 0 25px rgba(0, 0, 0, .45);
+								-webkit-box-shadow: 0 0 25px rgba(0, 0, 0, .45);
+							}
+								#social-media ul li.language #choose-language ul li {
+									float: none;
+									display: block;
+									margin: 0;
+									border: none; /* remove inherited borders */
+									border-bottom: 1px solid #000;
+									width: 186px;
+									height: 24px;
+									padding: 20px;
+								}
+								#social-media ul li.language #choose-language ul li:hover {
+									background: #313131;
+								}
+								#social-media ul li.language #choose-language ul li:last-child {
+									border-bottom: 0;
+								}
+									#social-media ul li.language #choose-language ul li a {
+										text-indent: 0;
+										text-decoration: none;
+										border: none;
+										width: auto;
+										height: auto;
+									}
+										#social-media ul li.language #choose-language ul li a img {
+											position: relative;
+											top: 2px;
+											max-width: 40px;
+											height: 24px;
+											float: left;
+										}
+										#social-media ul li.language #choose-language ul li.active a img {
+											opacity: .45;
+										}
+										#social-media ul li.language #choose-language ul li a .domain {
+											font-family:'AvantGardeGothicITCW01B 731063', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+											font-size: 14px;
+											color: #00a6eb;
+											margin-left: 58px;
+											-webkit-font-smoothing: antialiased;
+										}
+										#social-media ul li.language #choose-language ul li.active a .domain {
+											opacity: .45;
+											color: #cecbcb;
+										}
+										#social-media ul li.language #choose-language ul li a .description {
+											font-family:'AvantGardeGothicITCW01M 731087', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+											font-size: 9px;
+											color: #cecbcb;
+											margin-left: 58px;
+											-webkit-font-smoothing: antialiased;
+											font-style: italic;
+										}
+										#social-media ul li.language #choose-language ul li a .description {
+											opacity: .45;
+										}
+
+		#search {
+			position: absolute;
+			top: 52px;
+			right: 0;
+			width: 194px;
+			background: url(../img/search-field-bg.png) 0 0 repeat-x;
+		}
+		#search-button {
+			display: none;
+		}
+			#search #search-input {
+				float: left;
+				width: 142px;
+				height: 30px;
+				font-family: 'AvantGardeGothicITCW01B 731069', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+				font-size: 13px;
+				background: transparent;
+				border: 0;
+				padding: 0 0 0 10px;
+				color: #fff;
+				-webkit-font-smoothing: antialiased;
+			}
+			#search-btn {
+				float: left;
+				display: block;
+				width: 42px;
+				height: 30px;
+				background: url(../img/search-field-bg.png) 50% 50% no-repeat;
+			}
+
+	/* nav
+	========================================================================== */
+
+	nav {
+		position: absolute;
+		height: 75px;
+		top: 29px;
+		left: 125px;
+	}
+		nav .content {
+			width: auto;
+			margin: 0;
+		}
+			nav ul {
+
+			}
+				nav ul#nav-list > li {
+					float: left;
+					display: inline;
+					position: relative;
+				}
+				nav li.hover {
+				}
+				nav ul#nav-list > li {
+					height: 75px;
+				}
+					nav ul#nav-list > li > a {
+						font-family:'AvantGardeGothicITCW01M 731087', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+						font-size: 12px;
+						color: #fff;
+						height: 71px;
+						line-height: 72px;
+						text-decoration: none;
+						display: block;
+						padding: 0 10px;
+						border-top: 4px solid #000;
+						-webkit-font-smoothing: antialiased;
+					}
+					nav ul#nav-list > li.hover > a {
+						border-top: 4px solid #027aaf;
+						background: #282828;
+					}
+					nav li a {
+						display: block
+					}
+					nav li a span {
+						color: #fff;
+						display: block;
+						padding-right: 18px;
+					}
+					nav .first a {
+						padding-left: 4px;
+					}
+						nav ul#nav-list > li.hover > a span {
+							background: transparent url(../img/nav-dropdown-carrot.png) right 50% no-repeat;
+						}
+
+					nav li ul {
+						position: absolute;
+						left: -9999px;
+						width: 260px;
+						background: #282828;
+						padding: 10px 0 15px 0;
+					}
+					nav li.hover ul {
+						left: auto;
+
+					}
+					nav li.hover ul ul {
+						/* set up for pseudo element overlay */
+						z-index: 1;
+					}
+					nav li.hover ul ul:after {
+						position: absolute;
+						z-index: -1;
+						top: 0;
+						right: 0;
+						bottom: 0;
+						left: 0;
+						content: '';
+						box-shadow: inset 20px 0px 20px -20px rgba(0, 0, 0, .6);
+					}
+					nav li ul ul {
+					}
+
+						nav li.hover li {
+							height: 34px;
+							line-height: 34px;
+						}
+						nav li.contains-highlight ul {
+							padding-bottom: 0;
+						}
+							nav li.contains-highlight.hover li.highlight {
+								background: #303030;
+							}
+							nav li.contains-highlight.hover li.highlight.hlfirst {
+								position: relative;
+								z-index: 1;
+								margin-top: 10px;
+								border-top: 1px solid #1a1a1a;
+								padding-top: 10px;
+							}
+							nav li.contains-highlight.hover li.highlight.hlfirst:after {
+								content: '';
+							    position: absolute;
+							    z-index: -1;
+							    top: 0;
+							    right: 0;
+							    bottom: 0;
+							    left: 0;
+							    border-top: 1px solid #3b3b3b;
+							}
+							nav li.contains-highlight.hover li.highlight.hllast {
+								padding-bottom: 10px;
+							}
+						nav li.hover li.hover {
+							position: relative;
+						}
+							nav li.hover li.hover > a {
+								background: #0181ba url(../img/nav-sublevel-hover-bg.png) 0 0 repeat-x !important;
+							        box-shadow: 0 8px 12px -6px rgba(0, 0, 0, .2), 0 -8px 12px -6px rgba(0, 0, 0, .2);
+							   -moz-box-shadow: 0 8px 12px -6px rgba(0, 0, 0, .2), 0 -8px 12px -6px rgba(0, 0, 0, .2);
+							-webkit-box-shadow: 0 8px 12px -6px rgba(0, 0, 0, .2), 0 -8px 12px -6px rgba(0, 0, 0, .2);
+							}
+							nav li.hover li.sub.hover > a {
+
+							}
+								nav li.hover li.hover li.hover > a > span {
+									box-shadow: inset 20px 0px 20px -20px rgba(0, 0, 0, .8);
+								}
+								nav li.hover li.sub.hover > a > span {
+									margin-right: 12px;
+									background: transparent url(../img/nav-sublevel-carrot.png) right 50% no-repeat;
+								}
+							nav li.hover li a,
+							nav li.hover li.hover li a,
+							nav li.hover li.hover li.hover li a,
+							nav li.hover li.hover li.hover li.hover li a,
+							nav li.hover li.hover li.hover li.hover li.hover li a {
+								text-decoration: none;
+							}
+							nav li.hover li.hover a,
+							nav li.hover li.hover li.hover a,
+							nav li.hover li.hover li.hover li.hover a,
+							nav li.hover li.hover li.hover li.hover li.hover a,
+							nav li.hover li.hover li.hover li.hover li.hover li.hover a {
+							}
+								nav li li a span,
+								nav li li.sub li a span,
+								nav li li li.sub li a span,
+								nav li li li li.sub li a span,
+								nav li li li li li.sub li a span {
+									font-family: 'AvantGardeGothicITCW01B 731069', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+									font-size: 14px;
+									-webkit-font-smoothing: antialiased;
+								}
+								nav li li.sub a span,
+								nav li li li.sub a span,
+								nav li li li li.sub a span,
+								nav li li li li li.sub a span,
+								nav li li li li li li.sub a span {
+								}
+
+								nav li.hover li a span,
+								nav li.hover li.hover li a span,
+								nav li.hover li.hover li.hover li a span,
+								nav li.hover li.hover li.hover li.hover li a span,
+								nav li.hover li.hover li.hover li.hover li.hover li a span {
+									padding: 0 0 0 20px;
+								}
+								nav li.hover li.hover a span,
+								nav li.hover li.hover li.hover a span,
+								nav li.hover li.hover li.hover li.hover a span,
+								nav li.hover li.hover li.hover li.hover li.hover a span,
+								nav li.hover li.hover li.hover li.hover li.hover li.hover a span  {
+								}
+						nav li.hover ul li ul,
+						nav li.hover ul li.hover ul li ul,
+						nav li.hover ul li.hover ul li.hover ul li ul,
+						nav li.hover ul li.hover ul li.hover ul li.hover ul li ul,
+						nav li.hover ul li.hover ul li.hover ul li.hover ul li.hover ul li ul {
+							left: -9999px;
+						}
+							nav li.hover ul li.hover ul,
+							nav li.hover ul li.hover ul li.hover ul,
+							nav li.hover ul li.hover ul li.hover ul li.hover ul,
+							nav li.hover ul li.hover ul li.hover ul li.hover ul li.hover ul,
+							nav li.hover ul li.hover ul li.hover ul li.hover ul li.hover ul li.hover ul {
+								left: 260px;
+								top: -10px;
+							}
+
+
+
+	/* Article
+	========================================================================== */
+	article {
+		background: #d1cfcf url(http://cdn.www.sony.com/css/img/bg-gradient-top.gif) repeat-x left bottom;
+		position: relative;
+		z-index: 2;
+		margin-top: 104px;
+	}
+
+	/* Hero -- Tablet
+	========================================================================== */
+	#hero {
+		height: 527px;
+	}
+
+	#hero #hero-inner .hero-frame .hero-unit {
+		height: 527px;
+	}
+
+	#hero #hero-inner .hero-frame .hero-unit .hero-unit-inner,
+	#hero #hero-inner .hero-frame .hero-unit .video-overlay .video-overlay-inner,
+	#hero #hero-inner .hero-frame .hero-unit .followup-overlay .followup-overlay-inner {
+		width: 740px;
+	}
+
+	#hero .hero-unit .video-overlay .video-overlay-inner iframe {
+        width: 740px;
+        height: 527px;
+    }
+
+
+	/* Alert
+	========================================================================== */
+	#alert {
+		width: 742px;
+		margin: 0 auto;
+		position: relative;
+		z-index: 5;
+	}
+		#alert .content {
+			background: url(http://cdn.www.sony.com/css/img/promo-shadow.png) no-repeat center bottom;
+			padding: 0 0 25px 0;
+			margin-bottom: 17px;
+		}
+		#alert .wrapper {
+			background: url(http://cdn.www.sony.com/css/img/tab-content-bg-med.png) repeat-y center top;
+			overflow: hidden;
+			height: 51px;
+			position: relative;
+		}
+			#alert h1 {
+				font-size: 14px;
+				color: #03648c;
+				float: left;
+				padding: 15px 15px 0 20px;
+				background: url(http://cdn.www.sony.com/css/img/alert-divider.gif) no-repeat right 13px;
+				margin: 0;
+				height: 36px;
+			}
+			#alert .description {
+				float: left;
+				font-size: 12px;
+				color: #696969;
+				height: 31px;
+				padding: 20px 15px 0 15px;
+				margin: 0;
+				overflow: hidden;
+				white-space: nowrap;
+				width: 365px;
+			}
+			#alert .link {
+				float: left;
+				height: 31px;
+				padding: 20px 0 0 15px;
+				margin: 0;
+				background: url(http://cdn.www.sony.com/css/img/alert-divider.gif) no-repeat left 13px;
+			}
+				#alert .link a {
+					font-size: 9px;
+					font-weight: bold;
+					color: #3e3e3e;
+					text-transform: uppercase;
+					text-decoration: none;
+					background: url(http://cdn.www.sony.com/css/img/icon-arrow-red-sml.gif) no-repeat right center;
+					padding: 0 14px 0 0;
+				}
+				#alert .link a:hover {
+					color: #057CAD;
+				}
+			#alert .close-btn {
+				position: absolute;
+				right: 8px;
+				top: 8px;
+				margin: 0;
+			}
+				#alert .close-btn a {
+					display: block;
+					width: 6px;
+					height: 6px;
+					background: url(http://cdn.www.sony.com/css/img/icon-x-sml.gif) no-repeat;
+					text-indent: -9999px;
+				}
+				#alert .close-btn a:hover {
+					filter:alpha(opacity=60);
+					-moz-opacity:0.6;
+					-khtml-opacity: 0.6;
+					opacity: 0.6;
+				}
+
+
+	/* Tabs
+	========================================================================== */
+	#tabs {
+		position: relative;
+		z-index: 4;
+	}
+		#tabs .content {
+			width: 742px;
+			margin: 0 auto;
+		}
+			#tab-dropdown {
+				display: none;
+			}
+			#tab-nav {
+				margin: 0 0 -7px 1px;
+				padding: 0;
+				width: 740px;
+				height: 46px;
+			}
+				#tab-nav li {
+					float: left;
+					display: inline;
+					position: relative;
+					z-index: 2;
+				}
+				#tab-nav li.current {
+					margin: -7px -12px 0 -12px;
+					z-index: 3;
+				}
+				.ie7 #tab-nav li.current {
+					margin: -7px 0 0 0;
+				}
+				#tab-nav.length-1 li {
+					width: 740px;
+				}
+					#tab-nav.length-1 li.current {
+
+					}
+					#tab-nav.length-1 li:first-child.current {
+						margin-left: 0;
+					}
+					#tab-nav.length-1 li:last-child.current {
+						margin-right: 0;
+					}
+				#tab-nav.length-2 li,
+				.ie7 #tab-nav.length-2 li.current {
+					width: 370px;
+				}
+					#tab-nav.length-2 li.current {
+						width: 382px;
+					}
+					#tab-nav.length-2 li:first-child.current {
+						margin-left: 0;
+					}
+					#tab-nav.length-2 li:last-child.current {
+						margin-right: 0;
+					}
+				#tab-nav.length-3 li {
+					width: 247px;
+				}
+				.ie7 #tab-nav.length-3 li.current {
+					width: 246px;
+				}
+					#tab-nav.length-3 li.current {
+						width: 270px;
+					}
+					#tab-nav.length-3 li:first-child.current {
+						width: 258px;
+						margin-left: 0;
+					}
+					.ie7 #tab-nav.length-3 li:first-child.current {
+						width: 246px;
+					}
+					#tab-nav.length-3 li:last-child.current {
+						width: 258px;
+						margin-right: 0;
+					}
+				#tab-nav.length-4 li,
+				.ie7 #tab-nav.length-4 li.current {
+					width: 185px;
+				}
+					#tab-nav.length-4 li.current {
+						width: 209px;
+					}
+					#tab-nav.length-4 li:first-child.current {
+						width: 197px;
+						margin-left: 0;
+					}
+					#tab-nav.length-4 li:last-child.current {
+						width: 197px;
+						margin-right: 0;
+					}
+				#tab-nav.length-5 li,
+				.ie7 #tab-nav.length-5 li.current {
+					width: 148px;
+				}
+					#tab-nav.length-5 li.current {
+						width: 172px;
+					}
+					#tab-nav.length-5 li:first-child.current {
+						width: 160px;
+						margin-left: 0;
+					}
+					#tab-nav.length-5 li:last-child.current {
+						width: 160px;
+						margin-right: 0;
+					}
+				#tab-nav.length-6 li,
+				.ie7 #tab-nav.length-6 li.current {
+					width: 123px;
+				}
+					#tab-nav.length-6 li.current {
+						width: 147px;
+					}
+					#tab-nav.length-6 li:first-child.current {
+						width: 135px;
+						margin-left: 0;
+					}
+					#tab-nav.length-6 li:last-child.current {
+						width: 135px;
+						margin-right: 0;
+					}
+				#tab-nav.length-7 li,
+				.ie7 #tab-nav.length-7 li.current {
+					width: 105px;
+				}
+					#tab-nav.length-7 li.current {
+						width: 127px;
+					}
+					#tab-nav.length-7 li:first-child.current {
+						width: 117px;
+						margin-left: 0;
+					}
+					#tab-nav.length-7 li:last-child.current {
+						width: 1117px;
+						margin-right: 0;
+					}
+
+					#tab-nav .current .shadow-left {
+						display: block;
+						background: url(http://cdn.www.sony.com/css/img/tab-shadow-left.png) no-repeat left bottom;
+						padding: 0 0 0 12px;
+					}
+					#tab-nav li:first-child .shadow-left,
+					.ie7 #tab-nav .current .shadow-left {
+						background: none;
+						padding: 0;
+					}
+						#tab-nav .current .shadow-right {
+							display: block;
+							background: url(http://cdn.www.sony.com/css/img/tab-shadow-right.png) no-repeat right bottom;
+							padding: 0 12px 0 0;
+						}
+						#tab-nav li:last-child .shadow-right,
+						.ie7 #tab-nav .current .shadow-right {
+							background: none;
+							padding: 0;
+						}
+							#tab-nav a {
+								display: block;
+								background: url(http://cdn.www.sony.com/css/img/tab-bg-gradient-sml.gif) repeat-x left bottom;
+								font-family:'AvantGardeGothicITCW01D 731075', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+								text-transform: uppercase;
+								font-size: 13px;
+								color: #6a6a6a;
+								text-align: center;
+								text-decoration: none;
+								cursor: pointer;
+							}
+							#tab-nav .current a {
+
+							}
+							#tab-nav a:hover,
+							#tab-nav .current a {
+								color: #03648c;
+							}
+							#tab-nav .current a:hover {
+
+							}
+								#tab-nav .gradient {
+									display: block;
+									background: url(http://cdn.www.sony.com/css/img/tab-bg-left-sml.gif) no-repeat left bottom;
+									height: 29px;
+									padding: 10px 17px 0 0;
+								}
+								#tab-nav.length-5 .gradient,
+								#tab-nav.length-6 .gradient,
+								#tab-nav.length-7 .gradient {
+									padding-right: 0;
+								}
+								#tab-nav .current .gradient {
+									height: 32px;
+									padding-top: 14px;
+									background-color: #fff;
+									background-image:none ;
+								}
+								#tab-nav li:first-child .gradient,
+								#tab-nav li.current + li .gradient {
+									background-image: url(http://cdn.www.sony.com/css/img/tab-bg-left-sml-no-shadow.gif);
+								}
+								#tab-nav li.current:first-child .gradient {
+									background-color: #fff;
+									background-image:none ;
+								}
+									#tab-nav .icon {
+										padding: 0 10px 0 0;
+										display: block;
+										background: url(http://cdn.www.sony.com/css/img/sprite-vertical.gif) no-repeat right -391px;
+									}
+									#tab-nav.length-5 .icon,
+									#tab-nav.length-6 .icon,
+									#tab-nav.length-7 .icon {
+										background: none;
+										padding-right: 0;
+									}
+									#tab-nav .current .icon {
+
+									}
+									#tab-nav a:hover .icon,
+									#tab-nav .current a .icon {
+										background-position: right -435px;
+									}
+									#tab-nav .current a:hover .icon {
+
+									}
+
+	/* Tab Content
+	========================================================================== */
+	#tab-content {
+		background: url(http://cdn.www.sony.com/css/img/tabs-btm-shadow.png) no-repeat center bottom;
+		width: 742px;
+		padding: 0 0 27px 0;
+		min-height: 350px;
+	}
+		#tab-content .content {
+			width: 742px;
+			overflow: hidden;
+			background: url(http://cdn.www.sony.com/css/img/tab-content-bg-med.png) repeat-y center top;
+			min-height: 350px;
+		}
+			#tab-content .featured {
+				float: left;
+				width: 390px;
+				overflow: hidden;
+				padding: 40px 0 20px 55px;
+			}
+				#tab-content .featured .img {
+					margin: 0 0 3px 0;
+				}
+					#tab-content .featured .img a{
+						position: relative;
+						display: block;
+					}
+					#tab-content .featured .play-icon {
+						display: block;
+						width: 100%;
+						height: 100%;
+						position: absolute;
+						top: 0;
+						left: 0;
+						z-index: 2;
+						background: url(http://cdn.www.sony.com/css/img/sprite-vertical-transparent.png) no-repeat 164px 84px;
+						cursor: pointer;
+					}
+				#tab-content .featured .video{
+					display: none;
+				}
+				#tab-content .featured .description {
+					overflow: hidden;
+				}
+				#tab-content .featured a {
+					text-decoration: none;
+				}
+					#tab-content .featured h3 {
+						font-size: 17px;
+						color: #4a4a4a;
+						text-transform: uppercase;
+						margin: 0 0 5px 0;
+						font-family:'AvantGardeGothicITCW01D 731075', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+					}
+					#tab-content .featured a:hover h3 {
+						color: #057cad;
+					}
+					#tab-content .featured p {
+						font-size: 12px;
+						color: #5e5e5e;
+						margin: 0 0 10px 0;
+					}
+						#tab-content .featured .btn {
+							float: left;
+							display: block;
+							background: url(http://cdn.www.sony.com/css/img/sprite-vertical-thin.gif) repeat-x left -224px;
+						}
+						#tab-content .featured .btn:hover {
+							background-position: left -247px;
+						}
+							#tab-content .featured .btn a {
+								background: url(http://cdn.www.sony.com/css/img/sprite-vertical-thin.gif) no-repeat left -275px;
+								font-size: 9px;
+								text-decoration: none;
+								color: #fff;
+								font-weight: bold;
+								text-transform: uppercase;
+								text-shadow: #016b98 2px 1px 2px;
+								display: block;
+								cursor: pointer;
+							}
+							#tab-content .featured .btn:hover a {
+								background-position: left -298px;
+							}
+								#tab-content .featured .btn a .gradient {
+									background: url(http://cdn.www.sony.com/css/img/sprite-vertical-thin.gif) no-repeat right -275;
+									display: block;
+									height: 17px;
+									padding: 6px 9px 0 9px;
+								}
+								#tab-content .featured .btn:hover a .gradient {
+									background-position: right -298px;
+								}
+									#tab-content .featured .btn a .gradient .arrow {
+										padding:  0 12px 0 0;
+										background: url(http://cdn.www.sony.com/css/img/sprite-vertical.gif) no-repeat right -479px;
+									}
+						#tab-content .featured .twitter {
+							float: left;
+							height: 21px;
+							border-left: 1px solid #d1d1d1;
+							margin: 0 0 0 16px;
+							padding: 3px 0 0 16px;
+							position: relative;
+						}
+							#tab-content .featured .twitter a {
+								display: block;
+								width: 19px;
+								height: 18px;
+								background: url(http://cdn.www.sony.com/css/img/sprite-vertical.gif) no-repeat left -212px;
+								text-indent: -9999px;
+							}
+							#tab-content .featured .twitter-tooltip {
+								position: absolute;
+								display: block;
+								width: 49px;
+								height: 28px;
+								background: url(http://cdn.www.sony.com/css/img/sprite-vertical-transparent.png) no-repeat left -167px;
+								z-index: 10;
+								top: -29px;
+								right: -14px;
+								display: none;
+							}
+						#tab-content .featured .pinterest {
+							float: left;
+							height: 21px;
+							border-left: 1px solid #d1d1d1;
+							margin: 0 0 0 16px;
+							padding: 2px 0 0 16px;
+							zoom:1;
+							border-top: 1px solid #fff;
+							border-right: 1px solid #fff;
+							border-bottom: 1px solid #fff;
+						}
+							#tab-content .featured .pinterest a {
+								display: block;
+								width: 43px;
+								height: 21px;
+								background: url(http://cdn.www.sony.com/css/img/btn-pinterest.png) no-repeat left top;
+								text-indent: -9999px;
+							}
+						#tab-content .featured .google {
+							float: left;
+							margin: 0 0 0 9px;
+							padding: 5px 0 0 0;
+						}
+						#tab-content .featured .facebook {
+							float: left;
+							margin: 0 0 0 9px;
+							width: 50px;
+							overflow: hidden;
+							padding: 3px 0 0 0;
+						}
+							#tab-content .featured .facebook iframe {
+								float: left;
+							}
+
+			#tab-content .supporting {
+				float: right;
+				width: 205px;
+				overflow: hidden;
+				margin: 0;
+				padding: 40px 50px 20px 0;
+			}
+				#tab-content .supporting .img {
+					margin: 0 0 6px 0;
+					line-height: 0;
+					font-size: 0;
+				}
+				#tab-content .supporting a {
+					text-decoration: none;
+					display: block;
+				}
+				#tab-content .supporting h4 {
+					font-size: 15px;
+					color: #4a4a4a;
+					text-transform: uppercase;
+					font-family:'AvantGardeGothicITCW01D 731075', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+					margin: 0 0 8px 0;
+				}
+				#tab-content .supporting a:hover h4 {
+					color: #057CAD;
+				}
+				#tab-content .supporting p {
+					margin: 0 0 19px 0;
+					color: #5e5e5e;
+				}
+					#tab-content .supporting p span{
+						display: inline-block;
+						float: left;
+					}
+				#tab-content .supporting p a {
+					color: #5e5e5e;
+				}
+					#tab-content .supporting .pin-it-button {
+						display: inline;
+					}
+						#tab-content .supporting .pin-it-button img {
+							vertical-align: top;
+						}
+				#tab-content .supporting a:last-child .img {
+					margin-bottom: 8px;
+				}
+				#tab-content .supporting a:last-child p {
+					margin-bottom: 0;
+				}
+			#tab-content .brand-bin {
+				width: 630px;
+				padding: 30px 55px 35px 55px;
+				overflow: hidden;
+				margin-left: 1px;
+				background: url(http://cdn.www.sony.com/css/img/brand-bin-bg-shadow.gif) no-repeat center top;
+			}
+				#tab-content .brand-bin h4 {
+					font-size: 13px;
+					color: #4a4a4a;
+					text-transform: uppercase;
+					font-family:'AvantGardeGothicITCW01D 731075', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+					margin: 0 0 9px 0;
+				}
+				#tab-content .brand-bin ul {
+					padding: 0 0 1px 0;
+					margin: 0;
+				}
+					#tab-content .brand-bin li {
+						list-style: none;
+						padding: 0 0;
+						width: 200px;
+						float: left;
+					}
+
+						#tab-content .brand-bin a {
+							text-decoration: none;
+							font-weight: bold;
+							font-size: 12px;
+							display: block;
+							padding: 10px 0 0px 12px;
+							background: url(http://cdn.www.sony.com/css/img/sprite-vertical.gif) no-repeat left -522px;
+						}
+						#tab-content .brand-bin a:hover {
+							color: #4a4a4a;
+							background-position: left -498px;
+
+						}
+
+
+	/* Promos
+	========================================================================== */
+	#promos {
+		position: relative;
+		z-index: 5;
+	}
+		#promos .content {
+			width: 740px;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+			#promos .promo-item {
+				float: left;
+				width: 170px;
+				margin-left: 20px;
+				background: url(http://cdn.www.sony.com/css/img/sprite-vertical-transparent.png) no-repeat center -129px;
+				padding: 0 0 25px 0;
+			}
+			#promos .promo-item.first {
+				margin-left: 0;
+			}
+				#promos a {
+					display: block;
+					width: 170px;
+					height: 193px;
+					text-decoration: none;
+					position: relative;
+					overflow: hidden;
+					cursor: pointer;
+				}
+					#promos .img {
+						margin: 0;
+						position: absolute;
+						z-index: 1;
+					}
+						#promos .img img {
+							margin-left: -25px;
+						}
+					#promos .description {
+						position: absolute;
+						z-index: 2;
+						background: url(http://cdn.www.sony.com/css/img/85-perc-black.png);
+						padding: 10px 16px 0px;
+						bottom: 0;
+						width: 138px;
+					}
+						#promos h3 {
+							font-size: 17px;
+							color: #fff;
+							margin: 0;
+							padding: 0 13px 13px 0;
+							background: url(http://cdn.www.sony.com/css/img/sprite-vertical.gif) no-repeat right -581px;
+						}
+						#promos a:hover h3 {
+							color: #39b4eb;
+							background: url(http://cdn.www.sony.com/css/img/sprite-vertical.gif) no-repeat right -1077px;
+						}
+						#promos .description p {
+							font-size: 12px;
+							color: #fff;
+							margin: 0;
+							padding: 0 0 12px;
+							margin: -6px 0 0 0;
+						}
+
+	/* News and social
+	========================================================================== */
+	#news-and-social {
+		background: #e6e6e6 url(http://cdn.www.sony.com/css/img/bg-gradient-btm.gif) repeat-x;
+		padding: 22px 0 55px 0;
+	}
+		#news-and-social .content {
+			width: 740px;
+			margin: 0 auto;
+			overflow: hidden;
+			background: url(http://cdn.www.sony.com/css/img/sprite-horizontal.gif) no-repeat -240px bottom;
+		}
+
+	/* News
+	========================================================================== */
+	#news {
+		float: left;
+		width: 350px;
+	}
+		#news .content {
+			width: auto;
+			background: none;
+		}
+			#news .header {
+				height: 40px;
+				overflow: hidden;
+				background: #fdfdfd;
+				border-bottom: 1px solid #e2e3e3;
+			}
+				#news .header h2 {
+					float: left;
+					font-size: 15px;
+					color: #515151;
+					font-family:'AvantGardeGothicITCW01D 731075', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+					padding: 11px 34px 4px 15px;
+					margin: 0;
+					text-transform: uppercase;
+					background: url(http://cdn.www.sony.com/css/img/sprite-vertical.gif) no-repeat right -691px;
+				}
+		#news ul {
+			margin: 0;
+			padding: 9px 0 10px 0;
+		}
+			#news ul li {
+				list-style: none;
+				padding: 0 0 1px 0;
+			}
+				#news a {
+					display: block;
+					overflow: hidden;
+					text-decoration: none;
+					cursor: pointer;
+				}
+				#news a:hover {
+					background: #fff;
+				}
+					#news .date {
+						float: left;
+						width: 65px;
+						height: 46px;
+						background: url(http://cdn.www.sony.com/css/img/sprite-vertical-thin.gif) no-repeat right -334px;
+						padding: 5px 0 0 0;
+					}
+						#news .date .month {
+							font-size: 9px;
+							font-weight: bold;
+							color: #3b3a3a;
+							text-align: center;
+							margin: 0;
+						}
+						#news .date .day {
+							margin: -3px 0 0 0;
+							font-size: 30px;
+							color: #7b7b7b;
+							text-align: center;
+							font-weight: bold;
+						}
+						#news a:hover .date .day {
+							color: #00a6eb;
+						}
+					#news .description {
+						margin: 0 0 0 87px;
+						padding: 7px 20px 5px 0;
+						color: #3e3e3e;
+						font-size: 12px;
+					}
+					.ie7 #news .description {
+						padding-top:16px;
+					}
+					#news a:hover .description {
+						color: #057CAD;
+					}
+						#news .description .table {
+							display: table;
+							height: 41px;
+						}
+							#news .description .table-cell {
+								display: table-cell;
+								vertical-align: middle;
+							}
+
+	/* Social
+	========================================================================== */
+	#social {
+		float: right;
+		width: 350px;
+	}
+		#social .content {
+			width: auto;
+			background: none;
+		}
+			#social .header {
+				height: 40px;
+				overflow: hidden;
+				background: #fdfdfd;
+				border-bottom: 1px solid #e2e3e3;
+			}
+				#social .header h2 {
+					float: left;
+					font-size: 15px;
+					color: #515151;
+					font-family:'AvantGardeGothicITCW01D 731075', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+					padding: 11px 36px 0 15px;
+					margin: 0;
+					text-transform: uppercase;
+					background: url(http://cdn.www.sony.com/css/img/sprite-vertical.gif) no-repeat right -740px;
+				}
+				#social .header .index {
+					float: right;
+					background: url(http://cdn.www.sony.com/css/img/sprite-vertical.gif) no-repeat left -1261px;
+					padding-left: 7px;
+					padding-right: 10px;
+					height: 40px;
+					margin: 0;
+				}
+					#social .header .index a {
+						background: url(http://cdn.www.sony.com/css/img/sprite-vertical.gif) no-repeat right -1219px;
+						font-size: 9px;
+						font-weight: bold;
+						text-transform: uppercase;
+						color: #767676;
+						text-decoration: none;
+						padding-right: 12px;
+						height: 40px;
+						line-height: 43px;
+						padding-left: 12px;
+						display: block;
+					}
+					#social .header .index a:hover {
+						color: #000;
+					}
+
+				#social #twitter-feed {
+					padding: 9px 0 14px;
+				}
+				#social .tweet {
+					overflow: hidden;
+					padding: 12px 10px 7px 14px;
+				}
+				#social .tweet.hover {
+					background: #fff;
+				}
+					#social .tweet .img {
+						float: left;
+						margin: 0
+					}
+						#social .tweet .img a {
+							display: block;
+						}
+							#social .tweet .img img {
+								background: #fff;
+								width: 41px;
+							}
+					#social .tweet .details {
+						margin: 0 0 0 62px;
+					}
+						#social .tweet .text {
+							font-size: 12px;
+							margin: 2px 0 3px 0;
+						}
+							#social .tweet .text a {
+								text-decoration: none;
+							}
+							#social .tweet .text a:hover {
+								text-decoration: underline;
+							}
+						#social .tweet ul {
+							overflow: hidden;
+							margin: 0;
+							padding: 0;
+						}
+							#social .tweet li {
+								float: left;
+								padding-right: 10px;
+								margin: 0;
+								list-style: none;
+								font-size: 10px;
+								color: #9c9c9c;
+							}
+
+							#social .tweet .time {
+								padding-top: 3px;
+							}
+
+							#social .tweet .reply,
+							#social .tweet .retweet,
+							#social .tweet .favorite {
+								display: none;
+							}
+							#social .tweet .favorite {
+								padding-right: 0;
+							}
+							#social .tweet.hover .reply,
+							#social .tweet.hover .retweet,
+							#social .tweet.hover .favorite {
+								display: block;
+							}
+								#social .tweet li a {
+									font-weight: bold;
+									text-decoration: none;
+									background: url(http://cdn.www.sony.com/css/img/sprite-vertical.gif) no-repeat left top;
+									padding-left: 15px;
+									display: block;
+									padding-top: 3px;
+								}
+								#social .tweet li a:hover {
+									text-decoration: underline;
+								}
+								#social .tweet .reply a {
+									background-position: left -1326px;
+								}
+								#social .tweet .retweet a {
+									background-position: left -1355px;
+									padding-left: 18px;
+								}
+								#social .tweet .favorite a {
+									background-position: left -1390px;
+									padding-left: 18px;
+								}
+
+
+
+	/* Footer
+	========================================================================== */
+	#footer {
+		height: 145px;
+	}
+		#footer .content {
+			width: 740px;
+			margin: 0 auto;
+			position: relative;
+		}
+			 #footer-logo {
+				position: absolute;
+				width: 81px;
+				height: 29px;
+				background: url(../img/sprite-vertical.png) no-repeat left -876px;
+				text-indent: -9999px;
+				margin: 0;
+				top: 33px;
+				left: 0;
+			}
+				#footer .main-links {
+					position: absolute;
+					margin: 0;
+					padding: 0;
+					left: 15px;
+					top: 31px;
+					width: 485px;
+				}
+				#footer .bottom {
+					top: 51px;
+				}
+
+					#footer .main-links li {
+						float: left;
+						display: inline;
+						list-style: none;
+						padding: 0 5px 0 6px;
+						background: url(http://cdn.www.sony.com/css/img/sprite-vertical-thin.gif) no-repeat left -386px;
+					}
+
+					#footer .main-links li.first {
+						background: none;
+						padding-left: 0;
+					}
+						#footer .main-links a {
+							font-size: 11px;
+							color: #fff;
+							text-decoration: none;
+						}
+						#footer .main-links a:hover {
+							color: #15b1e4;
+						}
+				#footer .secondary-links {
+					position: absolute;
+					margin: 0;
+					padding: 0;
+					left: 15px;
+					top: 53px;
+					/*top: 76px;*/
+				}
+					#footer .secondary-links li {
+						float: left;
+						display: inline;
+						list-style: none;
+						padding: 0 7px;
+						background: url(http://cdn.www.sony.com/css/img/sprite-vertical-thin.gif) no-repeat left -386px;
+						font-size: 9px;
+						color: #979696;
+					}
+
+					#footer .secondary-links li.first {
+						background: none;
+						padding-left: 0;
+					}
+						#footer .secondary-links a {
+							color: #979696;
+							text-decoration: none;
+						}
+						#footer .secondary-links a:hover {
+							color: #15b1e4;
+						}
+
+		#footer .corp-btn {
+			position: absolute;
+			margin: 0;
+			top: 26px;
+			right: 24px;
+		}
+			#footer a.btn {
+				display: block;
+				height: 24px;
+				color: #fff;
+				font-weight: bold;
+				text-decoration: none;
+				background: url(http://cdn.www.sony.com/css/img/sprite-vertical-thin.gif) repeat-x left -406px;
+				padding: 0 11px 0 0;
+				font-size: 9px;
+				text-transform: uppercase;
+			}
+
+			#footer a:hover.btn {
+				color: #27b2ef;
+			}
+			#footer .corp-btn a:hover.btn,
+			#footer .corporate-info:hover .corp-btn a.btn,
+			#footer .corporate-info.hover .corp-btn a.btn,
+			#footer .corporate-info.clicked .corp-btn a.btn {
+				background-position: left -430px;
+			}
+				#footer a.btn span {
+					padding: 6px 15px 0 10px;
+					background-repeat: no-repeat;
+					background-position: right -920px;
+					display: block;
+				}
+				#footer a:hover.btn span {
+					background-position: right -950px;
+				}
+					#footer .shop-by-phone a.btn {
+						padding-right: 0;
+					}
+						#footer .shop-by-phone a.btn span {
+							padding-left: 15px;
+						}
+				#footer .corp-btn a span {
+					background-image: url(http://cdn.www.sony.com/css/img/sprite-vertical.gif);
+				}
+				#footer .global-home a span {
+					background-image: url(http://cdn.www.sony.com/css/img/sprite-vertical.gif);
+					background-position: right -981px;
+				}
+				#footer .global-home a:hover span,
+				#footer .global-home a.clicked span {
+					background-position: right -1011px;
+				}
+		#footer .corp-links {
+			position: absolute;
+			bottom: -26px;
+			right: 0;
+			background: url(http://cdn.www.sony.com/css/img/corp-top.png) no-repeat;
+			width: 256px;
+			padding: 43px 0 0 0;
+			display: none;
+		}
+			#footer .corp-links ul {
+				margin: 0;
+				padding: 0 24px 10px 24px;
+				background: url(http://cdn.www.sony.com/css/img/corp-middle.png) repeat-y center top;
+			}
+				#footer .corp-links li {
+					list-style: none;
+					padding: 2px 0 2px 0;
+				}
+					#footer .corp-links a {
+						font-size: 11px;
+						font-weight: bold;
+						color: #ecebeb;
+						text-decoration: none;
+						display: block;
+						padding: 5px 20px 5px 10px;
+						text-align: right;
+					}
+					#footer .corp-links a:hover {
+						color: #0aaef7;
+						background: #292929;
+					}
+						#footer .corp-links span {
+
+							padding: 0 0 0 11px;
+						}
+						#footer .corp-links a:hover span {
+							background: url(http://cdn.www.sony.com/css/img/sprite-vertical.gif) no-repeat left -1047px;
+						}
+		#footer .corporate-info.hover .corp-links,
+		#footer .corporate-info.clicked .corp-links {
+			display: block;
+		}
+
+		#footer .global-home {
+			position: absolute;
+			margin: 0;
+			right: 24px;
+			top: 65px;
+		}
+
+		#footer .shop-by-phone {
+			position: absolute;
+			margin: 0;
+			right: 24px;
+			top: 104px;
+		}
+}
+
+/* menus fly out in the opposite direction in some cases, to keep them from disappearing off the edge of the screen */
+/* for desktop and tablet, we adjust the last menu item */
+@media only screen and (min-width: 740px) and (max-width: 1200px) {
+	nav li:nth-last-child(1).hover > ul {
+		right: 0;
+	}
+
+	nav li:nth-last-child(1).hover ul > li.hover > ul,
+	nav li:nth-last-child(1).hover ul > li.hover > ul > li.hover > ul,
+	nav li:nth-last-child(1).hover ul > li.hover > ul > li.hover > ul > li.hover > ul,
+	nav li:nth-last-child(1).hover ul > li.hover > ul > li.hover > ul > li.hover > ul > li.hover > ul,
+	nav li:nth-last-child(1).hover ul > li.hover > ul > li.hover > ul > li.hover > ul > li.hover > ul > li.hover > ul {
+		left: -260px;
+		top: -10px;
+	}
+
+	nav li:nth-last-child(1).hover li.sub.hover > a > span {
+		margin-left: 12px;
+		background: transparent url(../img/nav-sublevel-carrot-reverse.png) left 50% no-repeat;
+	}
+
+	nav li:nth-last-child(1).hover ul ul:after {
+		box-shadow: inset -20px 0px 20px -20px rgba(0, 0, 0, .6);
+	}
+
+	nav li:nth-last-child(1).hover li.hover li.hover > a > span {
+		box-shadow: inset -20px 0px 20px -20px rgba(0, 0, 0, .8);
+	}
+}
+
+/* for tablet, we also adjust the second-to-last menu item */
+@media only screen and (min-width: 740px) and (max-width: 960px) {
+	nav li:nth-last-child(2).hover > ul {
+		right: 0;
+	}
+
+	nav li:nth-last-child(2).hover ul > li.hover > ul,
+	nav li:nth-last-child(2).hover ul > li.hover > ul > li.hover > ul,
+	nav li:nth-last-child(2).hover ul > li.hover > ul > li.hover > ul > li.hover > ul,
+	nav li:nth-last-child(2).hover ul > li.hover > ul > li.hover > ul > li.hover > ul > li.hover > ul,
+	nav li:nth-last-child(2).hover ul > li.hover > ul > li.hover > ul > li.hover > ul > li.hover > ul > li.hover > ul {
+		left: -260px;
+		top: -10px;
+	}
+
+	nav li:nth-last-child(2).hover li.sub.hover > a > span {
+		margin-left: 12px;
+		background: transparent url(../img/nav-sublevel-carrot-reverse.png) left 50% no-repeat;
+	}
+
+	nav li:nth-last-child(2).hover ul ul:after {
+		box-shadow: inset -20px 0px 20px -20px rgba(0, 0, 0, .6);
+	}
+}
+
+
+
+/* 960
+/* ================================================================================================================== */
+/* ================================================================================================================== */
+/* ================================================================================================================== */
+@media only screen and (min-width: 960px) {
+  /* Style adjustments for viewports 860px and over */
+	/* Header
+	========================================================================== */
+	header {
+
+	}
+		header .content {
+			width: 940px;
+		}
+			header #logo {
+			}
+			#social-media {
+
+			}
+
+		#search {
+		}
+			#search #search-input {
+			}
+	/* nav
+	========================================================================== */
+	nav {
+	}
+		nav li a {
+		}
+		nav .first a {
+		}
+			nav li a span {
+			}
+
+				nav ul#nav-list > li > a {
+					font-size: 15px;
+					padding: 0 20px;
+				}
+
+	#search {
+		width: 252px;
+	}
+
+	#search #search-input {
+		width: 200px;
+	}
+
+	/* Hero -- Desktop
+	========================================================================== */
+	#hero {
+		height: 544px;
+	}
+
+	#hero #hero-inner .hero-frame .hero-unit {
+		height: 544px;
+	}
+
+	#hero #hero-inner .hero-frame .hero-unit .hero-unit-inner,
+	#hero #hero-inner .hero-frame .hero-unit .video-overlay .video-overlay-inner,
+	#hero #hero-inner .hero-frame .hero-unit .followup-overlay .followup-overlay-inner {
+		width: 940px;
+	}
+
+	#hero .hero-unit .video-overlay .video-overlay-inner iframe {
+        width: 940px;
+        height: 544px;
+    }
+
+
+	/* Alert
+	========================================================================== */
+	#alert {
+		width: 942px;
+		margin: 0 auto;
+	}
+		#alert .wrapper {
+			background: url(http://cdn.www.sony.com/css/img/tab-content-bg-lrg.png) repeat-y center top;
+		}
+			#alert h1 {
+				font-size: 17px;
+				padding: 14px 22px 0 22px;
+			}
+			#alert .description {
+				padding: 20px 22px 0 22px;
+				width: 446px;
+			}
+			#alert .link {
+				padding: 20px 0 0 22px;
+			}
+
+
+
+	/* Tabs
+	========================================================================== */
+	#tabs {
+		/*margin-top: -182px;*/
+	}
+		#tabs .content {
+			width: 942px;
+		}
+			#tab-nav {
+				width: 940px;
+			}
+				#tab-nav.length-1 li {
+					width: 940px;
+				}
+					#tab-nav.length-1 li.current {
+
+					}
+					#tab-nav.length-1 li:first-child.current {
+						margin-left: 0;
+					}
+					#tab-nav.length-1 li:last-child.current {
+						margin-right: 0;
+					}
+				#tab-nav.length-2 li,
+				.ie7 #tab-nav.length-2 li.current {
+					width: 470px;
+				}
+					#tab-nav.length-2 li.current {
+						width: 482px;
+					}
+					#tab-nav.length-2 li:first-child.current {
+						margin-left: 0;
+					}
+					#tab-nav.length-2 li:last-child.current {
+						margin-right: 0;
+					}
+				#tab-nav.length-3 li,
+				.ie7 #tab-nav.length-3 li.current {
+					width: 313px;
+				}
+					#tab-nav.length-3 li.current {
+						width: 338px;
+					}
+					#tab-nav.length-3 li:first-child.current {
+						width: 326px;
+						margin-left: 0;
+					}
+					.ie7 #tab-nav.length-3 li:first-child.current {
+						width: 314px;
+					}
+					#tab-nav.length-3 li:last-child.current {
+						width: 326px;
+						margin-right: 0;
+					}
+				#tab-nav.length-4 li {
+					width: 235px;
+				}
+				.ie7 #tab-nav.length-4 li.current {
+					width: 235px;
+				}
+					#tab-nav.length-4 li.current {
+						width: 259px;
+					}
+					#tab-nav.length-4 li:first-child.current {
+						width: 247px;
+						margin-left: 0;
+					}
+					.ie7 #tab-nav.length-4 li:first-child.current {
+						width: 235px;
+					}
+					#tab-nav.length-4 li:last-child.current {
+						width: 247px;
+						margin-right: 0;
+					}
+				#tab-nav.length-5 li,
+				.ie7 #tab-nav.length-5 li.current {
+					width: 188px;
+				}
+					#tab-nav.length-5 li.current {
+						width: 212px;
+					}
+					#tab-nav.length-5 li:first-child.current {
+						width: 200px;
+						margin-left: 0;
+					}
+					#tab-nav.length-5 li:last-child.current {
+						width: 200px;
+						margin-right: 0;
+					}
+				#tab-nav.length-6 li,
+				.ie7 #tab-nav.length-6 li.current {
+					width: 156px;
+				}
+					#tab-nav.length-6 li.current {
+						width: 180px;
+					}
+					#tab-nav.length-6 li:first-child.current {
+						width: 168px;
+						margin-left: 0;
+					}
+					#tab-nav.length-6 li:last-child.current {
+						width: 168px;
+						margin-right: 0;
+					}
+				#tab-nav.length-7 li,
+				.ie7 #tab-nav.length-7 li.current {
+					width: 134px;
+				}
+					#tab-nav.length-7 li.current {
+						width: 158px;
+					}
+					#tab-nav.length-7 li:first-child.current {
+						width: 146px;
+						margin-left: 0;
+					}
+					#tab-nav.length-7 li:last-child.current {
+						width: 146px;
+						margin-right: 0;
+					}
+
+					#tab-nav.length-5 .gradient {
+						padding: 10px 17px 0 0;
+					}
+					#tab-nav.length-5 .current .gradient {
+						height: 32px;
+						padding-top: 14px;
+					}
+						#tab-nav.length-5 .icon {
+							padding: 0 10px 0 0;
+							background: url(http://cdn.www.sony.com/css/img/icon-plus-blue-gray.gif) no-repeat right 6px;
+						}
+
+				#tab-nav a {
+					font-size: 15px;
+				}
+
+	/* Tab Content
+	========================================================================== */
+	#tab-content {
+		width: 942px;
+	}
+		.content #tab-content .content {
+				width: 852px;
+				padding: 40px 40px 40px 50px;
+				background: url(http://cdn.www.sony.com/css/img/tab-content-bg-lrg.png) repeat-y center top;
+			}
+				#tab-content .featured {
+					width: 390px;
+					padding: 0;
+				}
+
+				#tab-content .supporting {
+					float: left;
+					width: 205px;
+					margin: 0 0 0 37px;
+					padding: 0;
+				}
+
+				#tab-content .brand-bin {
+					float: right;
+					width: 158px;
+					overflow: hidden;
+					background: none;
+					padding: 0;
+					margin: 0;
+				}
+					#tab-content .brand-bin h4 {
+
+					}
+					#tab-content .brand-bin ul {
+
+					}
+						#tab-content .brand-bin li {
+							width: 158px;
+						}
+
+		/* Store Tab Content
+		========================================================================== */
+		#tab-content .content.shop {
+
+		}
+			#tab-content .shop .supporting {
+				margin-left: 55px;
+			}
+	/* Promos
+	========================================================================== */
+	#promos {
+
+	}
+		#promos .content {
+			width: 940px;
+		}
+			#promos .promo-item {
+				width: 220px;
+				margin-left: 20px;
+				padding: 0 0 25px 0;
+			}
+			#promos .promo-item.first {
+				margin-left: 0;
+			}
+				#promos a {
+					width: 220px;
+					height: 193px;
+				}
+					#promos .img img {
+						margin: 0;
+					}
+					#promos .description {
+						padding: 10px 16px 0px;
+						width: 188px;
+					}
+						#promos h3 {
+							font-size: 18px;
+							padding-bottom: 12px;
+						}
+
+	/* News and social
+	========================================================================== */
+		#news-and-social .content {
+			width: 960px;
+			background: url(http://cdn.www.sony.com/css/img/sprite-horizontal.gif) no-repeat -990px bottom;
+		}
+
+	/* News
+	========================================================================== */
+	#news {
+		width: 445px;
+	}
+		#news .content {
+			width: auto;
+			background: none;
+		}
+
+	/* Social
+	========================================================================== */
+	#social {
+		width: 445px;
+	}
+		#social .content {
+			width: auto;
+			background: none;
+		}
+
+	/* Footer
+	========================================================================== */
+	#footer {
+		height: 113px;
+	}
+		#footer .content {
+			width: 960px;
+		}
+			 #footer-logo {
+				top: 33px;
+				left: 14px;
+			}
+				#footer .main-links {
+					left: 15px;
+					width: 485px;
+				}
+				#footer .main-links li {
+					padding: 0 9px 0 8px;
+				}
+				#footer .secondary-links {
+					left: 15px;
+				}
+				#footer .secondary-links li {
+					padding: 0 9px;
+				}
+
+		#footer .corp-btn {
+			top: 26px;
+			right: 131px;
+		}
+		#footer .corp-links {
+			bottom: -26px;
+			right: 107px;
+		}
+
+
+		#footer .global-home {
+			right: 15px;
+			top: 26px;
+		}
+
+		#footer .shop-by-phone {
+			right: 62px;
+			top: 60px;
+		}
+
+
+
+
+}
+
+
+/* Print styles.
+/* ================================================================================================================== */
+/* ================================================================================================================== */
+/* ================================================================================================================== */
+
+@media print {
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
+  a, a:visited { color: #444 !important; text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3{ page-break-after: avoid; }
+}

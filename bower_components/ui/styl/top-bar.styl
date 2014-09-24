@@ -1,0 +1,54 @@
+@import nib
+
+@import colors
+@import media-query-variables
+
+.top-bar
+  padding 1.3333em 0
+  border-bottom .0625em solid lightLineGray
+
+  @media pageWithAppNavigationMinWidthQuery
+    &.with-app-navigation
+      position fixed
+      border-bottom 0
+      top 0
+      left 0
+      right 0
+      z-index 5
+
+      > .centered-page.with-app-navigation
+        position relative
+
+      .top-bar-inner
+        display none
+
+  @media iPhoneMaxWidthQuery
+    padding-top .6666em
+    padding-bottom .6666em
+
+  .top-bar-inner
+    position relative
+    height 1.777em
+
+    .logo-link
+      font-size .3333em
+      position absolute
+      top 0
+      right 0
+      bottom 0
+      left 0
+      margin auto
+
+      @media iPhoneMaxWidthQuery
+        width 9em
+        height 3.3em
+
+    .app-menu
+      position absolute
+      top 0
+      right 0
+
+      a.dropdown-menu-button
+        text-align right
+        padding .125em 0
+        line-height 2.125em

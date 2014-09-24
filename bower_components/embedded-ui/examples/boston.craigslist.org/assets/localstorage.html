@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- saved from url=(0085)http://www.craigslist.org/static/localstorage.html?v=df3e26b8dc7dec459e3415594e32b1a3 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <script type="text/javascript">
+            var baseDomain = window.location.hostname.match(/craigslist\..+?$/)[0];
+            document.domain = baseDomain;
+            var ls = window.localStorage;
+            var CL = window.parent.CL;
+			var safe = CL.util.safe;
+            var localStorageAvailable = false;
+
+            if (ls){
+                localStorageAvailable = (function(){
+                    // test to make sure localStorage is available and working
+                    try {
+                        var item = 'isLocalStorageAvailable';
+                        ls.setItem(item, 'a');
+                        if (ls.getItem(item) !== 'a'){
+                            throw new Error();
+                        }
+                        ls.removeItem(item);
+                        return true;
+                    } catch (e) {}
+                }());
+            }
+
+            if (localStorageAvailable){
+				var safeLS = {
+					getItem: safe(ls.getItem, ls),
+					setItem: safe(ls.setItem, ls),
+					removeItem: safe(ls.removeItem, ls)
+				};
+
+                CL.when.localStorageAvailable.resolve(safeLS);
+            } else {
+                CL.when.localStorageAvailable.reject();
+            }
+        </script>
+    <style type="text/css"></style></head>
+    <body>
+
+</body></html>

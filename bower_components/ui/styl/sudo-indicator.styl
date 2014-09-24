@@ -1,0 +1,44 @@
+@import nib
+
+@import sizes
+@import media-query-variables
+
+sudo-indicator
+  display block
+  position fixed
+  top 0
+  left 0
+  height 0
+  width 0
+  z-index 10
+
+  .sudo-indicator
+    padding .5em
+    line-height 1
+
+    a.button.small-action-button
+      font-size .6em
+      font-weight 400
+      letter-spacing .1em
+      border-radius 2px
+
+@media pageWithoutAppNavigationMaxWidthQuery
+  sudo-indicator
+    position absolute
+    left 50%
+    margin-left - (centeredPageWidth / 2)
+
+    .sudo-indicator
+      padding 1.666em 1em
+
+mobileMaxWidthPlusTwoEmsQuery = "(max-width: " + (mobileMaxWidth + 32px) + ")"
+@media mobileMaxWidthPlusTwoEmsQuery
+  sudo-indicator
+    left 0
+    margin-left 0
+
+@media iPhoneMaxWidthQuery
+  sudo-indicator
+
+    .sudo-indicator
+      padding .9em .5em

@@ -1,0 +1,65 @@
+@import nib
+
+@import colors
+
+.dropdown
+
+  a.dropdown-menu-button
+    user-select none
+
+  .dropdown-menu
+    display none
+    position absolute
+    z-index 900
+    padding .5em 0
+    background #fff
+    background-color rgba(255, 255, 255, .975)
+    border-radius .1875em
+    box-shadow 0 0 0 1px rgba(0, 0, 0, .2)
+    background-clip padding-box
+
+    .dropdown-caret
+      position absolute
+      overflow hidden
+
+      .caret-outer, .caret-inner
+        position absolute
+        display inline-block
+
+      .caret-inner
+        border .5625em solid transparent
+
+      .caret-outer
+        border .625em solid transparent
+
+    .dropdown-menu-list
+      max-width 100%
+      padding 0
+      margin 0
+      list-style none
+
+      a
+        cursor pointer
+
+      li
+
+        &.separator
+          height .0625em
+          background #f3f3f3
+          margin .375em 0
+
+        &.item a
+          display block
+          padding .5em 1em
+
+  &.opened
+
+    > a.dropdown-menu-button:focus
+      outline none
+      color brandPink
+
+      > .icon
+        color inherit
+
+    .dropdown-menu
+      display block

@@ -1,0 +1,50 @@
+@import nib
+
+@import "ui/styl/box-sizing-border-box-all"
+@import "ui/styl/body-typography"
+@import "ui/styl/messages"
+@import "ui/styl/buttons"
+@import "ui/styl/media-query-variables"
+
+html
+  font-size 16px
+
+@media (max-width 28em)
+  html
+    font-size 14px
+
+@media (max-width 24em)
+  html
+    font-size 12px
+
+html, body
+  margin 0
+  height 100%
+  width 100%
+  overflow hidden
+  text-align center
+
+.message
+  text-align center
+  white-space nowrap
+  overflow ellipsis
+  font-size 1.125em
+  line-height 1.5em
+  border-radius .25em
+  border-top-left-radius 0
+  border-top-right-radius 0
+  height 100%
+  padding-top 0
+  padding-bottom 0
+  line-height 2.667em
+  height 2.667em
+  max-height 100%
+
+  padding-right .375em
+
+  .button.primary
+    background brandPink
+    line-height .8em
+    margin-left 1em
+    padding-left 1.125em
+    padding-right 1.125em

@@ -1,0 +1,61 @@
+@import colors
+@import media-query-variables
+
+ul.social-sharing-links
+  display block
+  margin 0
+  padding 0
+
+  li
+    display inline-block
+
+  svg
+    display block
+    height 100%
+    width 100%
+
+    .fill
+      fill #fff
+
+  a
+    background #000
+
+  .twitter a:hover
+    background #00aced
+
+  .facebook a:hover
+    background #3b5998
+
+  .google-plus a:hover
+    background #dd4b39
+
+  @media desktopMinWidthQuery
+    li
+      display block
+
+      a
+        display block
+        height 3em
+        width 3em
+        padding .5625em
+
+      &:first-child a
+        border-top-left-radius .3125em
+
+      &:last-child a
+        border-bottom-left-radius .3125em
+
+  @media mobileMaxWidthQuery
+    li
+
+      a
+        display block
+        height 2em
+        width 2em
+        padding .4375em
+
+      &:first-child a
+        border-radius .1875em 0 0 .1875em
+
+      &:last-child a
+        border-radius 0 .1875em .1875em 0

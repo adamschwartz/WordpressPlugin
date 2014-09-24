@@ -1,0 +1,115 @@
+@import nib
+
+@import "ui/styl/colors"
+@import "ui/styl/fonts"
+@import "ui/styl/font-smoothing"
+@import "ui/styl/media-query-variables"
+
+.marketing-page-three-steps
+
+  ol
+    antialiasedFonts()
+    list-style none
+    padding 0 2em
+    font-family serifFonts
+
+    li
+      margin-bottom 4em
+
+      .step-number
+        display block
+        text-align center
+        font-size 1.8em
+        border-radius 50%
+        width 1.125em
+        height 1.125em
+        margin-right auto
+        margin-left auto
+        margin-bottom .75em
+        line-height 1
+        background #000
+        color #fff
+
+  @media mobileMaxWidthQuery
+    ol
+      padding 0 1em
+
+      li
+
+        p.step, figure .image
+          text-align center
+
+          img
+            max-width 100%
+
+  @media desktopMinWidthQuery
+    text-align center
+
+    ol
+      clearfix()
+      display inline-block
+      margin-left auto
+      margin-right auto
+
+      li
+        width 23em
+        margin-left auto
+        margin-right auto
+
+        .step
+          font-size 1.25em
+          text-align center
+
+        .footer
+          color #707070
+          font-family sansSerifFonts
+
+          .link-paragraph
+            font-size 1.1em
+
+        figure
+
+          .textarea
+            border .0625em solid lightLineGray
+            border-radius .1875em
+            height 100%
+            max-height 13em
+            overflow hidden
+
+            textarea
+              border 0
+              width 350px
+              max-width 100%
+
+  @media (min-width: 80em)
+    ol
+
+      li
+        float left
+        margin-left 0
+        margin-right 2em
+        margin-bottom 0
+
+        &:last-child
+          margin-right 0
+
+        figure
+          height 13em
+
+          .image
+            position relative
+            height 100%
+            display block
+            margin-left auto
+            margin-right auto
+            max-width 100%
+
+            img
+              position absolute
+              top 0
+              right 0
+              bottom 0
+              left 0
+              margin auto
+              max-width 100%
+              max-height 100%

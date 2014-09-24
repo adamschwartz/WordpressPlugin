@@ -1,0 +1,30 @@
+machine:
+  node:
+    version: v0.10.26
+
+dependencies:
+  cache_directories:
+    - "~/nvm/v0.10.26/lib/node_modules"
+    - "~/nvm/v0.10.26/lib/bin"
+    - "~/.npm"
+
+  post:
+    - npm install -g gulp@3.6.2
+    - gulp build
+
+test:
+  pre:
+    - npm install -g karma-cli@0.0.4
+  override:
+    - karma start test/karma.conf.js --single-run
+
+deployment:
+  development:
+    branch: dev
+    commands:
+      - gulp publish-dev
+
+  production:
+    branch: master
+    commands:
+      - gulp publish-prod

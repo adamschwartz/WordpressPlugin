@@ -1,0 +1,136 @@
+@import nib
+
+@import colors
+@import media-query-variables
+@import "checkmark"
+
+ul.apps-list
+  list-style none
+  padding 0
+  margin 0
+
+  li
+    display block
+    position relative
+    height 5em
+
+    &:not(:last-child)
+      margin-bottom 2em
+
+      &:after
+        content ""
+        pointer-events none
+        position absolute
+        display block
+        background lighterLineGray
+        height .0625em
+        top 100%
+        width 100%
+        margin-top 1em
+
+    .icon
+      position absolute
+      width 4.5em
+      height 5em
+      padding .25em 0
+      border-radius .1875em
+
+      img
+        max-width 4.5em
+        max-height 4.5em
+        display block
+        margin auto
+
+    .info
+      position absolute
+      left 6.25em
+      right 8em
+
+    .title
+      overflow ellipsis
+      font-size 1.25em
+      margin-top .1875em
+      margin-bottom .25em
+
+    &[data-installed="true"] .title > a:hover
+      color secondaryButtonColor
+
+    .description
+      overflow ellipsis
+      color #444
+      font-weight 300
+      margin-bottom .25em
+
+      &.empty
+        font-style italic
+        opacity .5
+
+    .author
+      overflow ellipsis
+      color #aaa
+      font-weight 300
+
+    .title, .author
+
+      a
+        color inherit
+        text-decoration none
+
+        &:hover
+          color brandPink
+
+    .actions
+      position absolute
+      right 0
+      top 0
+      width 9em
+
+      a.button.small-action-button, .installed-label, .approval-label
+        margin-bottom .25em
+        float right
+        text-align right
+        clear right
+        text-decoration none
+
+      .installed-label, .approval-label
+        display inline-block
+        color subtleText
+        font-size .8em
+
+      .installed-label, .approval-label.approved
+
+        &:before
+          content ""
+          display inline-block
+          vertical-align middle
+          height 1em
+          width 1em
+          checkmark subtleText
+          background-repeat no-repeat
+          background-position .105em .0625em
+          background-size .8em .8em
+          margin-right .125em
+
+    @media iPhoneMaxWidthQuery
+      height auto
+
+      .icon, .info, .actions
+        position static
+
+      .icon
+        width 100%
+        margin-bottom 1em
+
+      .actions
+        width auto
+        padding-top .5em
+
+        a.button.small-action-button, .installed-label
+          margin-bottom 0
+          float none
+
+        a.button.small-action-button
+          margin-right .5em
+
+        .installed-label
+          margin-right 1em

@@ -1,0 +1,257 @@
+@import nib
+
+@import sizes
+@import colors
+@import media-query-variables
+@import "selectArrow"
+
+smallNavigationPageMinHeightQuery = "(min-height: 40.0625em)"
+smallNavigationPageMaxHeightQuery = "(max-height: 40em)"
+smallerNavigationPageMaxHeightQuery = "(max-height: 32em)"
+smallestNavigationPageMaxHeightQuery = "(max-height: 28em)"
+
+navigationActiveBar()
+  content ""
+  position absolute
+  top .45em
+  bottom .45em
+  margin auto
+  width .125em
+  background brandPink
+
+.app-navigation
+  position absolute
+  left 1em
+  top 1.5em
+  width appNavigationWidth
+  padding-right 2em
+  display none
+
+  @media pageWithAppNavigationMinWidthQuery
+    display block
+
+  .menu-box
+    position relative
+    margin-bottom 2em
+
+  .logo-link
+    font-size .3333em
+    margin-bottom 8em
+
+  .side-navigation-list
+    list-style none
+    padding 0
+    margin 0
+
+    > li
+
+      &.separator
+        height .0625em
+        margin .375em 0
+
+        @media smallerNavigationPageMaxHeightQuery
+          margin-top .125em
+          margin-bottom .125em
+
+        @media smallestNavigationPageMaxHeightQuery
+          margin-top 0
+          margin-bottom 0
+
+        &.large
+          height 2.5em
+
+          @media smallNavigationPageMaxHeightQuery
+            height 1.25em
+
+          @media smallerNavigationPageMaxHeightQuery
+            height .75em
+
+          @media smallestNavigationPageMaxHeightQuery
+            height .25em
+
+      > a
+        display block
+        position relative
+        cursor pointer
+        padding .45em 0
+        color #000
+
+        @media smallerNavigationPageMaxHeightQuery
+          padding-top .25em
+          padding-bottom .25em
+
+        @media smallestNavigationPageMaxHeightQuery
+          padding-top .125em
+          padding-bottom .125em
+
+        &:hover
+          text-decoration none
+          color brandPink
+
+        &.active:before
+          navigationActiveBar()
+          right 100%
+          margin-right .75em
+
+      &.item-current-site-selection
+        position relative
+        max-width 11.5em
+
+        select.standard
+          font-size .8em
+          padding-bottom .25em
+          padding-top .25em
+          margin-top -.25em
+          padding-left .3125em
+          margin-left -.375em
+
+        site-select:not(.welcome-message-target) select.standard:not(:hover):not(:focus)
+          background transparent
+          border-color transparent
+
+        site-select.welcome-message-target select.standard
+          animation opacity-breathe 1s infinite alternate
+
+          &:hover
+            animation none
+
+        .welcome-message
+          top 0
+          left 100%
+          width 26em
+
+      &.item-account
+
+        a:after
+          content ""
+          clear both
+          display table
+
+        .avatar
+          display inline-block
+          float left
+          height 1.25em
+          width 1.25em
+          background lightGray
+          margin-right .5em
+          border-radius .1875em
+
+        .name
+          overflow ellipsis
+
+      &.item-about.dropdown
+        position relative
+
+        a.dropdown-menu-button
+
+          .icon.ellipsis-icon
+            vertical-align middle
+            margin-left 1.325em
+            margin-bottom .5em
+
+          &:hover .icon.ellipsis-icon
+            color inherit // Workaround odd rendering bug
+
+        .dropdown-menu
+
+          .dropdown-menu-list li.item a
+            position relative
+            white-space nowrap
+            color #000
+            padding-right 1.25em
+
+            &:hover
+              color brandPink
+
+            &.active:before
+              navigationActiveBar()
+
+        @media smallNavigationPageMaxHeightQuery
+          .dropdown-menu
+            left 6em
+
+            .dropdown-menu-list li.item a.active:before
+              right -.0625em
+
+          .dropdown-caret
+            left -.5625em
+            width .625em
+            height 1.25em
+            top 4.25em
+
+            .caret-outer, .caret-inner
+              margin-left -.0625em
+
+            .caret-inner
+              top .0625em
+              left .0625em
+              border-left 0
+              border-right-color rgba(255, 255, 255, .975)
+
+            .caret-outer
+              top 0
+              left 0
+              border-left 0
+              border-right-color rgba(0, 0, 0, .3)
+
+        .dropdown-menu
+          @media smallNavigationPageMaxHeightQuery
+            top -3.75em
+
+          @media smallerNavigationPageMaxHeightQuery
+            top -4em
+
+          @media smallestNavigationPageMaxHeightQuery
+            top -4.125em
+
+        @media smallNavigationPageMinHeightQuery
+          position fixed
+          bottom 2em
+          z-index 1
+
+          .dropdown-menu
+            bottom 100%
+            margin-bottom .375em
+
+            .dropdown-menu-list li.item a.active:before
+              left -.0625em
+
+          .dropdown-caret
+            bottom -.625em
+            width 1.125em
+            height .625em
+            left 1.125em
+
+            .caret-outer, .caret-inner
+              margin-left -.0625em
+
+            .caret-inner
+              bottom .0625em
+              left .0625em
+              border-bottom 0
+              border-top-color rgba(255, 255, 255, .975)
+
+            .caret-outer
+              bottom 0
+              left 0
+              border-bottom 0
+              border-top-color rgba(0, 0, 0, .3)
+
+      &.item-about-separator
+        @media smallNavigationPageMinHeightQuery
+          display none
+
+      &.item-sign-out
+        margin-top .5em
+        font-size .8em
+
+        a
+          padding-top .25em
+          padding-bottom .25em
+          margin-top -.25em
+
+@keyframes opacity-breathe
+  from
+    opacity 1
+  to
+    opacity .25

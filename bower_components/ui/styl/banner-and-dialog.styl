@@ -1,0 +1,137 @@
+@import nib
+
+@import reset
+@import box-sizing-border-box-all
+@import body-typography
+@import links-brand-colored
+@import colors
+@import media-query-variables
+@import buttons
+
+html, body
+  width 100%
+  height 100%
+  overflow hidden
+
+html
+  background transparent
+
+body
+  background rgba(0, 0, 0, .4)
+  margin 0
+
+.banner
+  position absolute
+  top 0
+  left 0
+  right 0
+  height 2.5em
+  text-align center
+  letter-spacing .02em
+  text-indent .02em
+  font-weight 300
+  color #fff
+  background-color logoPurple
+  background linear-gradient(45deg, logoPurple, logoBlue)
+
+  p
+    font-size .9375rem
+    padding .75em 1em
+    margin 0
+
+.dialog-scroller
+  position absolute
+  top 0
+  right 0
+  bottom 0
+  left 0
+  overflow auto
+  overflow-scrolling touch
+
+  .banner + &
+    top 2.5em
+
+.dialog
+  background #fff
+  width 35em
+  border-radius .3125em
+
+  header, section, footer
+    padding-left 1.25em
+    padding-right 1.25em
+
+  header, footer
+    padding-top 1.25em
+    padding-bottom 1.25em
+
+  header, section:not(:last-of-type)
+    margin-bottom 1.5em
+
+  header
+    padding-top 2.5em
+
+    .logo svg
+      display block
+      width 6em
+      height 2.6em
+      margin 0 auto
+      max-width 100%
+      margin-bottom 1em
+
+    h1
+      font-weight normal
+      font-size 1.5em
+      margin-top 0
+      margin-bottom .5em
+
+    h2
+      font-weight normal
+      font-size 1em
+      margin 0
+
+  footer
+    text-align right
+
+    &.hero
+      text-align center
+      padding-bottom 2.5em
+
+  p
+    font-size 1.2em
+
+@media desktopMinWidthQuery
+  .dialog-scroller
+    padding 1.25em 0
+
+  .dialog-vertical-align-outer
+    display table
+    margin 0 auto
+    height 100%
+
+  .dialog-vertical-align-inner
+    display table-cell
+    vertical-align middle
+
+  .dialog
+
+    header
+      margin-bottom 1.25em
+
+      .logo svg
+        margin-bottom 2.5em
+
+@media mobileMaxWidthQuery
+  .banner
+    position static
+    height auto
+
+  .dialog-scroller
+    position static
+
+  .dialog
+    width 100%
+    border-radius 0
+
+    header, section, footer
+      paddding-left .75em
+      paddding-right .75em

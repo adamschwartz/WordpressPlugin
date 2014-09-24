@@ -1,0 +1,14 @@
+{
+  "name": "bus",
+  "private": true,
+  "homepage": "https://github.com/EagerIO/Bus",
+  "_release": "8defe87022",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "8defe87022057949ccf526b2773b26c032c40646"
+  },
+  "_source": "git@github.com:EagerIO/Bus.git",
+  "_target": "*",
+  "_originalSource": "git@github.com:EagerIO/Bus.git"
+}

@@ -1,0 +1,9 @@
+production:
+  key: 'AKIAI6GOLFT7SRTSCZSA'
+  secret: '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'
+  bucket: 'bus.eager.io'
+
+development:
+  key: 'AKIAJJKIFHEVS6HOCJDQ'
+  secret: '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'
+  bucket: 'dev.bus.eager.io'

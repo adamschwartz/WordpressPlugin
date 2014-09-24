@@ -1,0 +1,8 @@
+{
+  "name": "eager-wordpress",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "embedded-ui": "git@github.com:EagerIO/EmbeddedUI.git#master"
+  }
+}

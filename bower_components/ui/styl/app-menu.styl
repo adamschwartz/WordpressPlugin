@@ -1,0 +1,120 @@
+@import nib
+
+@import colors
+@import "selectArrow"
+
+.app-menu
+
+  a.dropdown-menu-button
+    cursor pointer
+    display inline-block
+    color subtleText
+    text-decoration none
+    text-transform uppercase
+    letter-spacing .06em
+    text-indent .06em
+    font-size .8em
+    font-weight 300
+    -webkit-tap-highlight-color transparent
+
+    &:hover
+      color #000
+
+      .menu-icon
+        color inherit // Workaround odd rendering bug
+
+    .menu-icon
+      margin-left .5em
+
+  .dropdown-menu
+    top 100%
+    right 0
+    margin-top .875em
+
+    .dropdown-caret
+      top -.625em
+      width 1.125em
+      height .625em
+      right 2.46em
+
+      .caret-outer, .caret-inner
+        margin-left -.0625em
+
+      .caret-inner
+        top .0625em
+        left .0625em
+        border-top 0
+        border-bottom-color rgba(255, 255, 255, .975)
+
+      .caret-outer
+        top 0
+        left 0
+        border-top 0
+        border-bottom-color rgba(0, 0, 0, .3)
+
+    .dropdown-menu-list
+      width 13em
+
+      li
+
+        &.item a
+          color #333
+
+          &:hover
+            background brandPink
+            color #fff
+            text-decoration none
+            box-shadow -1px 0 brandPinkDarkened, 1px 0 brandPinkDarkened
+
+        &.item-current-site-selection
+
+          select.standard
+            border-radius 0
+            font-size .8em
+            padding .25rem 1rem
+            margin-top -.25em
+            border-width 0
+            background-color transparent
+            background-size 3.5em .6em
+            background-position right 47.5%
+
+            &:hover
+              background-color brandPink
+              box-shadow -1px 0 brandPinkDarkened, 1px 0 brandPinkDarkened
+              color #fff
+              selectArrow #fff
+
+            &:focus
+              box-shadow none
+
+        &.item-account
+
+          a
+            clearfix()
+
+          .avatar
+            display inline-block
+            float left
+            height 2.5em
+            width 2.5em
+            background lightGray
+            margin-right 1em
+            border-radius .1875em
+
+          .name
+            margin-bottom .1875em
+            overflow ellipsis
+
+          .item-text
+            font-size .8125em
+
+        &.item-sign-out-temporary span
+          font-size .8em
+
+  &.opened
+
+    a.dropdown-menu-button
+      color #000
+
+      .menu-icon
+        color inherit // Workaround odd rendering bug

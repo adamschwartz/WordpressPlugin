@@ -1,0 +1,346 @@
+@import nib
+
+@import sizes
+@import colors
+@import media-query-variables
+
+.form
+
+  label .help-text
+    display block
+    color subtleText
+
+  h3
+    font-weight normal
+    margin 0 0 1em
+
+  > *:first-child
+    margin-top 0
+
+  > *:last-child
+    margin-bottom 0
+
+  .input
+    margin-bottom 1em
+
+    > label
+      font-size .9em
+      margin-bottom .3em
+      display inline-block
+
+  ul.radio-or-checkbox-list
+    list-style none
+    padding 0
+    margin 0
+
+    li
+      margin-bottom .25em
+
+      > label
+        cursor pointer
+        display inline-block
+
+        > input[type="radio"], > input[type="checkbox"]
+          position relative
+          top -.0625em
+          margin-right .5em
+
+  .field-group
+    clearfix()
+    clear both
+    margin-bottom 2em
+    background lightGray
+    padding 1.25em
+    border-radius .3125em
+
+    > *:first-child
+      margin-top 0
+
+    > label
+      float left
+      width 16em
+      font-size .9em
+
+      @media mobileMaxWidthQuery
+        margin-bottom 1em
+
+    > .input:last-child
+      margin-bottom 0
+
+    > .inputs
+      width 100%
+      padding-left 16em
+
+      @media mobileMaxWidthQuery
+        padding-left 0
+
+      > .input:last-child
+        margin-bottom 0
+
+  .actions
+    clearfix()
+
+    .actions-buttons
+      float left
+      margin-right 2em
+
+    .actions-messages
+      float left
+
+      .message
+        background transparent
+        padding-left 0
+        padding-right 0
+
+  .actions-wrapper.fixed-footer
+    @media (min-width iPhoneMaxWidth)
+      height 5em
+
+      .actions
+        border-top .0625em solid lightLineGray
+        padding-top 2em
+        position fixed
+        z-index 4
+        bottom 0
+        left 0
+        right 0
+        padding 1em 0
+        background #fff
+
+        .actions-inner
+          width centeredPageWidth
+          padding-left 1em
+          padding-right 1em
+          margin-left auto
+          margin-right auto
+
+    @media pageWithAppNavigationMinWidthQuery
+      .actions
+        left auto
+        right auto
+
+        .actions-inner
+          width centeredPageWidth - 2em
+          padding-left 0
+          padding-right 0
+
+  &.schema-form
+
+    h3
+      -webkit-margin-after-collapse separate
+
+    .help-block
+      display block
+      font-size .9em
+      padding .25em
+      color subtleText
+
+      &:empty
+        display none
+
+    bootstrap-decorator, sf-decorator
+      display block
+      margin-bottom 1em
+
+      &:last-child
+        margin-bottom 0
+
+        > div:last-child
+          margin-bottom 0
+
+    .form-group
+      -webkit-margin-after-collapse separate
+
+      > label
+        font-size .9em
+        margin-bottom .3em
+        display inline-block
+
+    select.standard
+      width 100%
+
+    .color-input-group
+      clearfix()
+
+      input[type="color"]
+        display none
+        width 5em
+        float left
+
+        @media firefoxOnlyQuery
+          display block
+
+        @media chromeOnlyQuery
+          display block
+
+      input[type="text"]
+        width 8em
+        float left
+
+    input[type="checkbox"]
+      margin-right .125em
+      position relative
+      top -.0625em
+
+    .form-group-selectinline
+      position relative
+      padding-left 8.5em
+
+      > label
+        position absolute
+        left 0
+        height 100%
+        width 8.5em
+        text-align right
+        font-size 1em
+        border-top 1px solid transparent
+        border-bottom 1px solid transparent
+        padding .6em 0
+        padding-right .75em
+        overflow ellipsis
+
+      @media iPhoneMaxWidthQuery
+        padding-left 6.25em
+
+        > label
+          width auto
+          padding-right 0
+          text-align left
+
+        select
+          padding-left .25em
+
+    .form-group-array-list
+      list-style none
+      margin 0
+      padding 0
+
+      &:not(:empty)
+        margin-bottom 1em
+
+      > li.form-group-array-list-item
+        position relative
+        border .0625em solid lightLineGray
+        background #fff
+        padding 1.25em
+        border-radius .1875em
+
+        &:first-child
+          border-radius .1875em .1875em 0 0
+
+          &:last-child
+            border-radius .1875em
+
+        + li.form-group-array-list-item
+          border-top-width 0
+          border-top-left-radius 0
+          border-top-right-radius 0
+
+        &:not(:first-child):not(:last-child)
+          border-radius 0
+
+        &.ui-sortable-helper, &.ui-sortable-placeholder
+          border-radius .1875em !important
+          border-width 1px !important
+
+          + li.form-group-array-list-item
+            border-top-width 1px
+            border-top-left-radius .1875em
+            border-top-right-radius .1875em
+
+        .button-close
+          position absolute
+          top -1px
+          right -1px
+
+    .choose-selector-input-wrapper
+      position relative
+
+      input[type="text"]
+        display block
+        position relative
+        z-index 2
+        padding-left 9.25em
+
+      button
+        position absolute
+        z-index 3
+        left .27em
+        top .27em
+        bottom .27em
+        width 9.25em
+        line-height .9em
+        padding-left 0
+        padding-right 0
+        background secondaryButtonColor
+
+      input[type="text"]:focus ~ button
+        background primaryButtonColor
+
+      .message
+        position absolute
+        z-index 1
+        top 0
+        left 0
+        right 0
+        opacity 0
+        transition opacity .3s ease-in-out, top .3s ease-in-out
+        pointer-events none
+        margin-top -.1875em
+        border-top-left-radius 0
+        border-top-right-radius 0
+
+      &:hover .message
+        opacity 1
+        top 100%
+        pointer-events all
+
+    div.checkbox > label
+      cursor pointer
+
+    .legend
+      font-size .9em
+
+    .fieldset
+      border .0625em solid lightLineGray
+      background #fff
+      border-radius .1875em
+      padding 1.25em
+
+      > sf-decorator > .input
+        position relative
+
+        > .fieldset
+          background transparent
+          border 0
+          border-top .0625em solid lightLineGray
+          border-radius 0
+          padding .5em 0 0 0
+
+          > sf-decorator
+            display block
+            margin-bottom .5em
+
+            &:last-child
+              margin-bottom 0
+
+          @media desktopMinWidthQuery
+            background transparent
+            padding-top 0
+            border-top 0
+            margin-left 8.5em
+
+            &:last-child
+              padding-bottom 0
+
+          &:last-child
+            margin-bottom 0
+
+        > .legend
+
+          @media desktopMinWidthQuery
+            font-size 1em
+            position absolute
+            height 1.25em
+            width 8.5em
+            overflow ellipsis

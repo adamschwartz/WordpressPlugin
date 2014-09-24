@@ -1,0 +1,229 @@
+@import nib
+
+@import colors
+@import fonts
+@import "font-smoothing"
+@import media-query-variables
+@import "checkmark"
+@import "radiomark"
+@import "selectArrow"
+
+::-webkit-input-placeholder
+  color rgba(0, 0, 0, .3)
+  font-family sansSerifFonts
+  font-size 1rem
+
+:-moz-placeholder
+  color rgba(0, 0, 0, .3)
+  font-family sansSerifFonts
+  font-size 1rem
+
+::-moz-placeholder
+  color rgba(0, 0, 0, .3)
+  font-family sansSerifFonts
+  font-size 1rem
+
+:-ms-input-placeholder
+  color rgba(0, 0, 0, .3)
+  font-family sansSerifFonts
+  font-size 1rem
+
+inputFocus()
+  &:focus
+    outline none
+    border-color brandPink
+    box-shadow 0 0 .0625em brandPink
+
+textarea, input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"]
+  width 100%
+  appearance none
+  -webkit-tap-highlight-color transparent
+  text-rendering optimizeLegibility
+  background #fff
+
+  @media firefoxOnlyQuery
+    &:invalid
+      box-shadow none
+
+  &[disabled]
+    background transparent
+
+  &.light
+    border 1px solid #fff
+    padding .6em .8em
+    border-radius .1875em
+    inputFocus()
+
+  &.standard
+    border 1px solid lightLineGray
+    border-top-color darken(lightLineGray, 15%)
+    padding .6em .8em
+    border-radius .1875em
+    inputFocus()
+
+    &[disabled]
+      border-color lightLineGray
+
+  &.ng-dirty.ng-invalid
+    color errorRed
+    border-color errorRed
+
+    &:focus
+      box-shadow 0 0 .0625em errorRed
+
+  &.code
+    antialiasedFonts()
+    font-family monospaceFonts
+    font-size .9em
+
+    &.standard
+      border-radius .1875rem
+
+      &:focus
+        box-shadow 0 0 .0625rem brandPink
+
+    &.embed-code
+      text-align center
+      cursor text
+
+  &:-webkit-autofill
+    -webkit-box-shadow inset 0 0 0 10em #fff !important
+    -webkit-text-fill-color inherit !important
+
+    &:focus
+      -webkit-box-shadow 0 0 .0625em brandPink, inset 0 0 0 10em #fff !important
+      -webkit-text-fill-color inherit !important
+      border-color brandPink !important
+
+textarea.standard.code
+  min-height 12em
+
+select.standard
+  appearance none
+  -webkit-tap-highlight-color transparent
+  text-rendering optimizeLegibility
+  cursor pointer
+  display block
+  padding .6em 2.25em .6em .8em
+  border 1px solid lightLineGray
+  border-bottom-color darken(lightLineGray, 15%)
+  width 20em
+  max-width 100%
+  background-color #fff
+  selectArrow #444
+  background-repeat no-repeat
+  background-position right 45%
+  background-size 2.5em .6em
+  inputFocus()
+
+  @media firefoxOnlyQuery
+    padding-right .6em
+    height 2.65em
+
+    option
+      padding .25em .4em
+      font-family sansSerifFonts
+
+      &:hover, &[selected]
+        background brandPink
+        color #fff
+
+@css {
+  /* Firefox version 30+ */
+  @supports (-moz-appearance: meterbar) and (background-blend-mode: difference, normal) {
+    select.standard {
+      padding-right: 0;
+      text-indent: -.09375em
+    }
+
+    select.standard option {
+      padding: .4em .8em
+    }
+  }
+}
+
+input[type="checkbox"], input[type="radio"]
+  background #fff
+  font-size 1.125em
+  appearance none
+  -webkit-tap-highlight-color transparent
+  cursor pointer
+  display inline-block
+  vertical-align middle
+  width 1em
+  height 1em
+  border .0625em solid lightLineGray
+  border-bottom-color darken(lightLineGray, 15%)
+  background-repeat no-repeat
+  background-position .105em .0625em
+  background-size .8em .8em
+  inputFocus()
+
+input[type="checkbox"]
+  border-radius .1875em
+
+  &:hover
+    checkmark lightGray
+
+  &:checked
+
+    &, &:hover
+      checkmark #000
+
+input[type="radio"]
+  border-radius 50%
+
+  &:hover
+    radiomark lightGray
+
+  &:checked
+
+    &, &:hover
+      radiomark #000
+
+@media firefoxOnlyQuery
+  input[type="color"]
+    height 2.6em
+    border 0
+    margin 0
+    margin-right .5em
+    padding 0
+
+@media chromeOnlyQuery
+  input[type="color"]
+    display block
+    background transparent
+    border 0
+    margin-left -.5em
+    margin-top -.5em
+    margin-right 0
+    width 21em
+    max-width 100%
+    height 3.55em
+    font-size 1rem
+    position relative
+    font-family inherit
+    cursor pointer
+
+    &:before
+      content " "
+      box-sizing border-box
+      display block
+      position absolute
+      top 0
+      right 0
+      bottom 0
+      left 0
+      border .5em solid #fff
+      border-radius .75em
+      box-shadow inset 0 -.0625em rgba(0, 0, 0, .3)
+
+      // TODO - remove hack
+      .form .field-group &
+        border-color lightGray
+
+    &:focus
+      outline none
+
+      &:before
+        box-shadow inset 0 0 0 .0625em brandPink

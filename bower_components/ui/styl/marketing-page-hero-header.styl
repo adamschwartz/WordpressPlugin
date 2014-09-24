@@ -1,0 +1,26 @@
+@import nib
+
+@import fonts
+@import "font-smoothing"
+@import media-query-variables
+
+.marketing-page-hero-header
+  text-align center
+
+  h2
+    antialiasedFonts()
+    font-family serifFonts
+
+  @media desktopMinWidthQuery
+    h2
+      font-size 2em
+
+    p
+      font-family sansSerifFonts
+      font-size 1.125em
+      font-weight 300
+      line-height 1.5em
+      letter-spacing .0125em
+      max-width 36em
+      margin-left auto
+      margin-right auto

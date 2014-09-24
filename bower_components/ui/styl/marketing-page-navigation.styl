@@ -1,0 +1,67 @@
+@import nib
+
+@import colors
+@import fonts
+@import media-query-variables
+
+.marketing-page-navigation
+  margin-top 4em
+  padding 1em 1em .0625em
+  border-top .0625em solid lighterLineGray
+
+  .marketing-page-footer-logo
+    display block
+    width 6em
+    height 3em
+    margin-top 1em
+    margin-bottom 1em
+    margin-left auto
+    margin-right auto
+
+    .logo, logo, svg
+      display block
+      height 100%
+      width 100%
+
+    @media mobileMaxWidthQuery
+      margin-left 0
+      margin-top 0
+      float left
+
+  .marketing-page-navigation-list
+    font-family sansSerifFonts
+    display block
+    list-style none
+    padding 0
+    margin 0
+    text-align right
+
+    li
+      display block
+
+      a
+        display inline-block
+        font-size .8em
+        line-height 1.125em
+        color darkGray
+        text-transform uppercase
+        letter-spacing .08em
+        border-bottom 1px solid transparent
+        margin-bottom 1em
+
+        &:hover
+          border-bottom-color lighten(darkGray, 47.5%)
+
+    @media desktopMinWidthQuery
+      text-align center
+      margin-bottom 3em
+      padding-top 1em
+
+      li
+        display inline-block
+
+        a
+          margin-right 1.125em
+
+        &:last-child a
+          margin-right .5em

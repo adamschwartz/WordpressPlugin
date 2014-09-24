@@ -13,8 +13,10 @@ define('EAGER_DIR', plugin_dir_path(__FILE__));
 define('EAGER_URL', plugin_dir_url(__FILE__));
 
 function eager_load() {
-  if (is_admin())
+  if (is_admin()){
     require_once(EAGER_DIR.'includes/admin.php');
+    require_once(EAGER_DIR.'includes/welcome.php');
+  }
 
   require_once(EAGER_DIR.'includes/core.php');
 }
@@ -39,16 +41,11 @@ function eager_notify() {
   ));
 }
 
-function eager_uninstall() {}
-
 function eager_activation() {
-  register_uninstall_hook(__FILE__, 'eager_uninstall');
-
   eager_notify();
+
+  add_option('Eager_Initial_Install', 'true');
 }
 register_activation_hook(__FILE__, 'eager_activation');
-
-function eager_deactivation() {}
-register_deactivation_hook(__FILE__, 'eager_deactivation');
 
 ?>

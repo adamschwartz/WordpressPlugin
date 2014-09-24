@@ -1,0 +1,19 @@
+@import nib
+
+@import colors
+
+.box
+  padding 1.5em
+  margin-bottom 1em
+  border .0625em solid lightLineGray
+  border-radius .1875em
+
+  &.solid
+    border-color transparent
+    background lightGray
+
+  > *:first-child
+    margin-top 0
+
+  > *:last-child
+    margin-bottom 0

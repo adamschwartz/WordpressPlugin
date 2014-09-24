@@ -1,0 +1,81 @@
+@import nib
+
+@import colors
+@import media-query-variables
+
+form.login-and-register-form
+
+  .name-input-pair
+    +clearfix
+
+    .input[data-input="first-name"]
+      float left
+      width 50%
+      padding-right .09375em
+
+      @media mobileMaxWidthQuery
+        padding-right .093em // Damn rounding
+
+    .input[data-input="last-name"]
+      float right
+      width 50%
+      padding-left .09375em
+
+      @media mobileMaxWidthQuery
+        padding-left .093em // Damn rounding
+
+  .input
+    margin-bottom .1875em
+
+    &.with-forgot-password-link[data-input="password"]
+      position relative
+
+      a.forgot-password
+        position absolute
+        right .625em
+        top .0625em
+        bottom 0
+        margin-top auto
+        margin-bottom auto
+        background gray
+        color #fff
+        font-size .95em
+        width 1.3em
+        height 1.3em
+        line-height 1.4em
+        border-radius 50%
+        text-align center
+        text-indent .1em
+
+        &:hover, &:focus
+          background brandPink
+
+    &[data-input="developer"]
+      font-size .9em
+      text-align left
+      padding .5em .7em
+      color #888
+
+      label
+        cursor pointer
+
+      input[type="checkbox"]
+        vertical-align top
+        margin-right .5em
+
+  button.primary
+    margin-top .8em
+
+  > *:last-child
+    margin-bottom 0
+
+  .login-and-register-modal-form-wrapper
+    padding-top 1.75em
+    padding-bottom 1em
+    background rgba(#000, .075)
+
+    .login-and-register-modal-form-content
+      width 26em
+      max-width 100%
+      margin-left auto
+      margin-right auto

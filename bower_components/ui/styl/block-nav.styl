@@ -1,0 +1,51 @@
+@import colors
+
+.block-nav
+  margin-bottom 1em
+  border .0625em solid lightLineGray
+  border-radius .1875em
+
+  .block-nav-header
+    background lighterGray
+    padding 1.1875em 1.5em 1em
+    border-bottom 1px solid lighterLineGray
+    border-radius .1875em .1875em 0 0
+
+    h3
+      color #888
+      margin 0
+      font-size .9em
+      font-weight 300
+      line-height .9em
+      text-transform uppercase
+      letter-spacing .12em
+
+  .block-nav-body
+    padding 1.5em
+
+    > *:first-child
+      margin-top 0
+
+    > *:last-child
+      margin-bottom 0
+
+  + .block-nav
+    margin-top 1.5em
+
+ul.block-nav-list
+  padding-left 0
+  list-style none
+
+  > li
+
+    > h4
+      margin-bottom .5em
+
+    &:first-child > h4
+      margin-top 0
+
+    > p
+      margin 0
+
+    &:last-child
+      margin-bottom 0

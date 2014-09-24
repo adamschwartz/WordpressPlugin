@@ -1,0 +1,80 @@
+@import nib
+
+.icon
+  font-size 16px
+  display inline-block
+  color inherit
+
+  &.menu-icon
+    box-shadow inset 0 .1875em, 0 -.1875em, 0 .1875em
+    height .5625em
+    width 1.25em
+    border-top .1875em solid transparent
+
+  &.add-icon
+    box-shadow inset 0 0 0 .5em, 0 -.25em, 0 -.5em, .25em 0, .5em 0, 0 .25em, 0 .5em, -.25em 0, -.5em 0
+    height .25em
+    width .25em
+    margin .5em
+
+  &.edit-icon
+    box-shadow inset 0 0 0 .125em, .5em 0 0 -.375em, -.5em 0 0 -.375em, 0 -.5em 0 -.375em, 0 .5em 0 -.375em, -.33em -.33em 0 -.375em, .33em -.33em 0 -.375em, -.33em .33em 0 -.375em, .33em .33em 0 -.375em
+    border-radius 50%
+    height 1em
+    width 1em
+    margin .125em
+
+  &.left-arrow-icon, &.right-arrow-icon, &.down-arrow-icon, &.up-arrow-icon
+    height 0
+    width 0
+    border .5625em solid
+
+  &.left-arrow-icon
+    border-left-color transparent
+    border-top-color transparent
+    border-bottom-color transparent
+
+  &.right-arrow-icon
+    border-right-color transparent
+    border-top-color transparent
+    border-bottom-color transparent
+
+  &.down-arrow-icon
+    border-left-color transparent
+    border-right-color transparent
+    border-bottom-color transparent
+
+  &.up-arrow-icon
+    border-left-color transparent
+    border-right-color transparent
+    border-top-color transparent
+
+  &.ellipsis-icon
+    height .125em
+    width .125em
+    margin .325em .625em
+    border-radius 50%
+    box-shadow -.5em 0 0 .0625em, .5em 0 0 .0625em, inset 0 0 0 1em, 0 0 0 .0625em
+
+  &.spinner-icon
+    height 1em
+    width 1em
+    border .0625em solid
+    border-radius 50%
+    border-bottom-color transparent
+    border-left-color transparent
+    transform rotateZ(0deg)
+    animation spinner-icon-spin infinite 420ms linear
+
+  &.x-icon:before
+    display inline-block
+    content "\00D7"
+    font-size 2em
+    color inherit
+    line-height .6em
+    width .5em
+    height .5em
+
+@keyframes spinner-icon-spin
+  to
+    transform rotateZ(360deg)

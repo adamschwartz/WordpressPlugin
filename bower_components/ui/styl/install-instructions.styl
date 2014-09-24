@@ -1,0 +1,90 @@
+@import nib
+
+@import fonts
+@import media-query-variables
+
+install-instructions
+
+  .install-instructions-select-type
+
+    > p:first-child
+      margin-top 0
+      font-size 1.2em
+      text-align center
+
+  .install-instructions-buttons-group
+
+    .button
+
+      @media largerThanIphoneMinWidthQuery
+        margin-right 1em
+
+        &:last-child
+          margin-right 0
+
+      @media iPhoneMaxWidthQuery
+        display block
+        margin-bottom 1em
+
+        &:last-child
+          margin-bottom 0
+
+  .install-instructions
+    font-family serifFonts
+
+    p
+      font-size 1.1em
+      text-align left
+
+      &:first-child
+        margin-top .25em
+
+      &:last-child
+        margin-bottom 0
+
+      .step-number
+        float left
+        font-size 1.2em
+        font-style normal
+        border-radius 50%
+        box-shadow 0 0 0 1px #666
+        display inline-block
+        width 1.1em
+        height 1.1em
+        line-height 1em
+        text-align center
+        text-indent .125em
+        margin-left .0625em
+        margin-right .75em
+        margin-bottom .5em
+
+    .copyable-code-wrapper
+      margin-bottom 1em
+
+      .embed-code
+        font-size .8em
+        padding .75em .8em
+        width 35em
+
+      @media mobileMaxWidthQuery
+        display block
+
+        .copy-button
+          display none
+
+        .embed-code
+          border-radius .25em
+          width 100%
+          overflow ellipsis
+
+  .install-instructions-setting-up
+
+    > *:last-child
+      margin-bottom 0
+
+    p
+      font-size 1.4em
+
+    .loading-dots
+      margin-left -1em
+      display inline-block

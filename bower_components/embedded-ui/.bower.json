@@ -1,0 +1,18 @@
+{
+  "name": "embedded-ui",
+  "private": true,
+  "dependencies": {
+    "ui": "git@github.com:EagerIO/UI.git",
+    "bus": "git@github.com:EagerIO/Bus.git"
+  },
+  "homepage": "https://github.com/EagerIO/EmbeddedUI",
+  "_release": "5f8fdd1df6",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "5f8fdd1df613fa98d6a77cf884a78aebd44dee3a"
+  },
+  "_source": "git@github.com:EagerIO/EmbeddedUI.git",
+  "_target": "master",
+  "_originalSource": "git@github.com:EagerIO/EmbeddedUI.git"
+}

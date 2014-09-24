@@ -1,0 +1,27 @@
+@import nib
+
+@import sizes
+@import colors
+@import media-query-variables
+
+.centered-page
+  width centeredPageWidth
+  padding-left 1em
+  padding-right 1em
+  max-width 100%
+  margin-left auto
+  margin-right auto
+
+  &.larger
+    padding-left 2em
+    padding-right 2em
+    width centeredPageLargerWidth
+
+  @media iPhoneMaxWidthQuery
+    padding-left .6666em
+    padding-right .6666em
+
+  &.with-app-navigation
+    @media pageWithAppNavigationMinWidthQuery
+      width centeredPageWidth + appNavigationWidth
+      padding-left 1em + appNavigationWidth

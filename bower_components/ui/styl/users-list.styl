@@ -1,0 +1,62 @@
+@import nib
+
+@import colors
+
+ul.users-list
+  list-style none
+  padding 0
+  margin 0
+
+  li
+    display block
+    position relative
+    height 5em
+
+    &:not(:last-child)
+      margin-bottom 2em
+
+      &:after
+        content ""
+        pointer-events none
+        position absolute
+        display block
+        background lighterLineGray
+        height .0625em
+        top 100%
+        width 100%
+        margin-top 1em
+
+    .avatar
+      position absolute
+      width 4.5em
+      height 5em
+      padding .25em 0
+      border-radius .1875em
+
+      img
+        max-width 4.5em
+        max-height 4.5em
+        display block
+        margin auto
+
+    .info
+      position absolute
+      left 6.25em
+      right 0
+
+    .title
+      overflow ellipsis
+      font-size 1.25em
+      margin-top .1875em
+      margin-bottom .25em
+
+    .email, .temporary
+      overflow ellipsis
+      color #444
+      font-weight 300
+      margin-bottom .25em
+
+    .username
+      overflow ellipsis
+      color #aaa
+      font-weight 300

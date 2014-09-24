@@ -1,0 +1,59 @@
+@import nib
+
+@import media-query-variables
+
+.global-messages
+  position absolute
+  z-index 20
+  pointer-events none
+  display flex
+  flex-direction column
+  align-items center
+  justify-content center
+  text-align center
+  margin-left auto
+  margin-right auto
+  left 0
+  right 0
+  top 4.5em
+
+  &:empty
+    display none
+
+  @media pageWithAppNavigationMinWidthQuery
+    position fixed
+    top 0
+
+  @media iPhoneMaxWidthQuery
+    position fixed
+    top 0
+    padding .5em
+
+  > ul
+    list-style none
+    margin 0 auto
+    padding 0
+    display block
+
+    > li
+      display block
+
+      > .message
+        max-width 40em
+        text-align left
+        pointer-events all
+
+      &:first-child, &:last-child
+
+        > .message
+          border-top-left-radius 0
+          border-top-right-radius 0
+
+      &:not(:last-child)
+
+        > .message
+          border-radius 0
+
+      @media mobileMaxWidthQuery
+        &:first-child > .message
+          border-radius .1875em

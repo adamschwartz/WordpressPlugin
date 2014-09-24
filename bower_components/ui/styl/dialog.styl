@@ -1,0 +1,119 @@
+@import nib
+
+@import media-query-variables
+
+body.dialog-open eager-app
+  transition opacity .3s
+  opacity .125
+
+  @media chromeAndSafariOnlyQuery
+    opacity .5
+
+  &, > div, > top-bar-with-app-navigation, > top-bar-with-app-navigation > .top-bar, app-navigation > .app-navigation
+    -webkit-transition -webkit-filter .3s
+    -webkit-filter blur(10px)
+
+.dialog-backdrop
+  position fixed
+  top 0
+  right 0
+  bottom 0
+  left 0
+  z-index 99998
+  background rgba(#fff, .5)
+
+  @media chromeAndSafariOnlyQuery
+    background rgba(#fff, .125)
+
+.dialog-scroller
+  position fixed
+  top 0
+  right 0
+  bottom 0
+  left 0
+  z-index 99999
+  overflow auto
+  overflow-scrolling touch
+
+.dialog-backdrop, .dialog-scroller
+  transition opacity .3s
+
+  &.fade
+    opacity 0
+
+    &.in
+      opacity 1
+
+.dialog
+  box-shadow 0 0 0 .0625em rgba(0, 0, 0, .05), 0 0 1.25em rgba(0, 0, 0, .15)
+  width 38em
+  background rgba(#fff, .75)
+  border-radius .3125em
+
+  header, section, footer
+    padding-left 2em
+    padding-right 2em
+
+    &.hero
+      text-align center
+
+    > *:first-child
+      margin-top 0
+
+    > *:last-child
+      margin-bottom 0
+
+  header, footer
+    padding-top 1.25em
+    padding-bottom 1.25em
+
+  section:not(:last-of-type)
+    margin-bottom 1.5em
+
+  header
+    padding-top 2.5em
+
+    h1
+      font-weight normal
+      font-size 1.5em
+
+    h2
+      font-weight normal
+      font-size 1.2em
+
+    h1 + h2
+      margin-top 0
+
+    &.solid
+      background rgba(255, 255, 255, .5)
+      box-shadow 0 .0625em rgba(0, 0, 0, .05)
+      margin-bottom 2em
+      border-top-left-radius .375em
+      border-top-right-radius .375em
+
+  footer
+    padding-bottom 2.5em
+    text-align right
+
+@media desktopMinWidthQuery
+  .dialog-scroller
+    padding 1.25em 0 4em
+
+  .dialog-vertical-align-outer
+    display table
+    margin 0 auto
+    height 100%
+
+  .dialog-vertical-align-inner
+    display table-cell
+    vertical-align middle
+
+@media mobileMaxWidthQuery
+  .dialog
+    width 100%
+    border-radius 0
+    background rgba(#fff, .95)
+
+    header, section, footer
+      paddding-left .75em
+      paddding-right .75em

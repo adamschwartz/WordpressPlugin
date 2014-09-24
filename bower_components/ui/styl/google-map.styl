@@ -1,0 +1,44 @@
+@import nib
+
+@import colors
+
+google-map
+  position relative
+  display block
+  overflow hidden
+  height 10em
+
+  google-map-element
+    display block
+    border-radius .5em
+    height 100%
+    width 100%
+    background transparent !important // Google adds an inline style
+
+  &:before
+    content ""
+    border-radius .5em
+    background lightGray
+    position absolute
+    left .0625em
+    top 0
+    right 0
+    bottom 0
+
+  .gm-style .gm-style-cc, img[src="https://maps.gstatic.com/mapfiles/api-3/images/google_white2.png"]
+    display none
+
+  google-map-marker-tooltip
+    overflow hidden
+    position absolute
+    display none
+    padding 1em
+    border-radius .1875em
+    background #fff
+    opacity .875
+
+    > *:first-child
+      margin-top: 0
+
+    > *:last-child
+      margin-bottom 0

@@ -1,0 +1,21 @@
+@import "ui/styl/banner-and-dialog"
+@import "ui/styl/media-query-variables"
+
+.dialog
+  text-align center
+  -webkit-font-smoothing antialiased
+
+@media mobileMaxWidthQuery
+  html
+    font-size 12px
+
+  .banner
+    overflow hidden
+    height .25em
+
+@media iPhoneMaxWidthQuery
+  .dialog
+     text-align left
+
+p.spaced
+  line-height 1.7em

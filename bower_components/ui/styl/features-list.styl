@@ -1,0 +1,102 @@
+@import nib
+
+@import colors
+@import fonts
+@import "font-smoothing"
+@import media-query-variables
+
+ul.features-list
+  slightlyDarkerAntialiasedFonts()
+  font-family sansSerifFonts
+  list-style none
+  padding 0
+  margin 0
+
+  > li
+    clearfix()
+    display block
+    position relative
+
+    &:not(:last-child)
+      margin-bottom 4em
+
+    .content
+
+      h3
+        font-family serifFonts
+        letter-spacing .03em
+
+      p
+        color darkGray
+
+        &:last-child
+          margin-bottom 0
+
+    .image img
+      display block
+      margin-left auto
+      margin-right auto
+      max-width 100%
+
+    @media desktopMinWidthQuery
+      .content
+
+        h3
+          margin-top 0
+          font-size 1.6em
+
+        p
+          font-size 1.125em
+          font-weight 300
+          line-height 1.5em
+          letter-spacing .0125em
+
+      .content, .image
+        width 44%
+
+      .image
+        position absolute
+        top 0
+        bottom 0
+
+        img
+          position absolute
+          top 0
+          right 0
+          bottom 0
+          left 0
+          margin auto
+
+      &:nth-child(odd) .content
+        float left
+
+      &:nth-child(even) .content
+        float right
+
+      &:nth-child(even) .image
+        left 0
+
+      &:nth-child(odd) .image
+        right 0
+
+    @media mobileMaxWidthQuery
+      &:not(:last-child)
+        margin-bottom 4em
+
+        &:before
+          content ""
+          pointer-events none
+          position absolute
+          display block
+          background lighterLineGray
+          height .0625em
+          top 100%
+          width 100%
+          margin-top 2em
+
+      .content, .image
+        width auto
+        float none
+
+      .content
+        margin-bottom 2em

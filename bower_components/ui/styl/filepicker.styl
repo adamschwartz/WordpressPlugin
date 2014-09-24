@@ -1,0 +1,45 @@
+@import nib
+
+@import colors
+
+.standard[filepicker]
+  padding 1.25em
+  border 1px dashed rgba(0, 0, 0, .3)
+  background-color rgba(255, 255, 255, .5)
+
+  &:after
+    text-transform uppercase
+    letter-spacing .072em
+    font-size .7272em
+    color subtleText
+    content "Drag image here"
+    text-align center
+    display block
+
+  &.dragging
+    background-color rgba(0, 0, 0, .1)
+
+    &:after
+      color inherit
+      content "Drop to upload"
+
+  &.uploading:after
+    color inherit
+    content "Uploading..."
+
+  &[data-progress].uploading:after
+    content "Uploading (" attr(data-progress) "%)..."
+
+  &.error:after
+    content "There was an error uploading, please try again."
+
+.standard.filepicker-with-image
+
+  .image
+    margin .2em 0 .4em
+
+    a
+      display inline-block
+
+    img
+      display block
