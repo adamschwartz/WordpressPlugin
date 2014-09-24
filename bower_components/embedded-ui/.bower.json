@@ -1,16 +1,27 @@
 {
   "name": "embedded-ui",
   "private": true,
+  "ignore": [
+    "deploy.yaml",
+    "circle.yml",
+    "coffee/",
+    "examples/",
+    "jade/",
+    "node_modules/",
+    "pages/",
+    "test/",
+    "tools/"
+  ],
   "dependencies": {
     "ui": "git@github.com:EagerIO/UI.git",
     "bus": "git@github.com:EagerIO/Bus.git"
   },
   "homepage": "https://github.com/EagerIO/EmbeddedUI",
-  "_release": "77498bb36f",
+  "_release": "5ac49cd2d2",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "77498bb36f65cedcfa3e1af48c9cba58538470ca"
+    "commit": "5ac49cd2d2808d50e34e811dd2c6140b14df5fd1"
   },
   "_source": "git@github.com:EagerIO/EmbeddedUI.git",
   "_target": "master",
