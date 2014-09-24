@@ -1,5 +1,12 @@
 {
   "name": "bus",
   "version": "0.0.1",
-  "private": true
+  "private": true,
+  "ignore": [
+    "deploy.yaml",
+    "circle.yml",
+    "coffee/",
+    "node_modules/",
+    "test/"
+  ]
 }

@@ -1,12 +1,19 @@
 {
   "name": "bus",
   "private": true,
+  "ignore": [
+    "deploy.yaml",
+    "circle.yml",
+    "coffee/",
+    "node_modules/",
+    "test/"
+  ],
   "homepage": "https://github.com/EagerIO/Bus",
-  "_release": "8defe87022",
+  "_release": "ec1c9cd7fe",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "8defe87022057949ccf526b2773b26c032c40646"
+    "commit": "ec1c9cd7fe1f82872cde3e73d0e371c2c639033b"
   },
   "_source": "git@github.com:EagerIO/Bus.git",
   "_target": "*",
