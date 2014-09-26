@@ -4,16 +4,15 @@
   "ignore": [
     "deploy.yaml",
     "circle.yml",
-    "coffee/",
     "node_modules/",
     "test/"
   ],
   "homepage": "https://github.com/EagerIO/Bus",
-  "_release": "ec1c9cd7fe",
+  "_release": "564f77ede9",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "ec1c9cd7fe1f82872cde3e73d0e371c2c639033b"
+    "commit": "564f77ede93746b07885f03ce51b1aa35df800bc"
   },
   "_source": "git@github.com:EagerIO/Bus.git",
   "_target": "*",

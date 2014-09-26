@@ -9,7 +9,7 @@ body.dialog-open eager-app
   @media chromeAndSafariOnlyQuery
     opacity .5
 
-  &, > div, > top-bar-with-app-navigation, > top-bar-with-app-navigation > .top-bar, app-navigation > .app-navigation
+  &, > div, > ui-view > div, > top-bar-with-app-navigation, > top-bar-with-app-navigation > .top-bar, app-navigation > .app-navigation
     -webkit-transition -webkit-filter .3s
     -webkit-filter blur(10px)
 
@@ -50,6 +50,17 @@ body.dialog-open eager-app
   background rgba(#fff, .75)
   border-radius .3125em
 
+  h1
+    font-weight normal
+    font-size 1.5em
+
+  h2
+    font-weight normal
+    font-size 1.2em
+
+  h1 + h2
+    margin-top 0
+
   header, section, footer
     padding-left 2em
     padding-right 2em
@@ -72,17 +83,6 @@ body.dialog-open eager-app
 
   header
     padding-top 2.5em
-
-    h1
-      font-weight normal
-      font-size 1.5em
-
-    h2
-      font-weight normal
-      font-size 1.2em
-
-    h1 + h2
-      margin-top 0
 
     &.solid
       background rgba(255, 255, 255, .5)

@@ -1,0 +1,69 @@
+@import nib
+
+@import colors
+@import media-query-variables
+
+.pending-install
+  width 26em
+  max-width 100%
+  margin-left auto
+  margin-right auto
+  text-align center
+  margin-bottom 1.5em
+
+  .pending-install-box
+    display inline-block
+    padding 1.5em
+    border-radius .1875em
+
+    &.pending-install-app, &.pending-install-site
+      border .0625em solid lightLineGray
+
+    h2
+      font-size .8em
+      color subtleText
+      margin 0
+      text-transform uppercase
+      font-weight normal
+      letter-spacing .1em
+      text-indent .1em
+      margin-bottom 2em
+
+    h3
+      font-size 1.125em
+
+    .app-icon
+      display block
+      margin-left auto
+      margin-right auto
+
+  @media mobileMaxWidthQuery
+    .pending-install-arrow, .pending-install-site
+      display none
+
+  @media desktopMinWidthQuery
+    height 12em
+    margin-bottom 2em
+    overflow hidden
+    width auto
+
+    .pending-install-box
+      vertical-align top
+      overflow hidden
+      height 100%
+
+      &.pending-install-arrow
+        width 5em
+        color darkGray
+        padding-top 4.25em
+        padding-left 2em
+        padding-right 1.5em
+
+      &.pending-install-app, &.pending-install-site
+        width 14em
+
+      &.pending-install-app h3
+        overflow ellipsis
+
+      &.pending-install-site h3
+        word-break break-all

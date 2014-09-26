@@ -1,6 +1,7 @@
 @import nib
 
 @import fonts
+@import "font-smoothing"
 @import media-query-variables
 
 install-instructions
@@ -8,8 +9,10 @@ install-instructions
   .install-instructions-select-type
 
     > p:first-child
+      antialiasedFonts()
+      font-family serifFonts
       margin-top 0
-      font-size 1.2em
+      font-size 1.1em
       text-align center
 
   .install-instructions-buttons-group
@@ -30,6 +33,7 @@ install-instructions
           margin-bottom 0
 
   .install-instructions
+    antialiasedFonts()
     font-family serifFonts
 
     p

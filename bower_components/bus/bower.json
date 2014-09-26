@@ -5,7 +5,6 @@
   "ignore": [
     "deploy.yaml",
     "circle.yml",
-    "coffee/",
     "node_modules/",
     "test/"
   ]

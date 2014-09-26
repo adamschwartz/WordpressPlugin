@@ -2,11 +2,11 @@
   "name": "ui",
   "private": true,
   "homepage": "https://github.com/EagerIO/UI",
-  "_release": "5f18f6bf88",
+  "_release": "ce7a07ea36",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "5f18f6bf88d4ef7afb1ac1c74f99b31d288a0214"
+    "commit": "ce7a07ea36c90a293488a638e066df2c7ec68c4b"
   },
   "_source": "git@github.com:EagerIO/UI.git",
   "_target": "*",
