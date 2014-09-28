@@ -42,9 +42,10 @@ function eager_notify() {
 }
 
 function eager_activation() {
+  eager_init_embed_code();
   eager_notify();
 
-  add_option('Eager_Initial_Install', 'true');
+  update_option('eager_initial_install', 'true');
 }
 register_activation_hook(__FILE__, 'eager_activation');
 
