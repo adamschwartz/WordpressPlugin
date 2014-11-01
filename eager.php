@@ -48,5 +48,3 @@ function eager_activation() {
   update_option('eager_initial_install', 'true');
 }
 register_activation_hook(__FILE__, 'eager_activation');
-
-?>

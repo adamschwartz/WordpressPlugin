@@ -46,5 +46,3 @@ function eager_get_embed_html() {
   }
 }
 add_action('wp_head', 'eager_get_embed_html');
-
-?>

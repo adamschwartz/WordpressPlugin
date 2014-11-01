@@ -94,5 +94,3 @@ function eager_embedcode_callback() {
     <input type="text" id="eager_embedcode" name="eager_options[eager_embedcode]" maxlength="12" value="<?php echo $code; ?>">
   <?php
 }
-
-?>

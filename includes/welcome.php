@@ -14,5 +14,3 @@ function eager_load_welcome($hook) {
 }
 
 add_action('admin_enqueue_scripts', 'eager_load_welcome');
-
-?>
