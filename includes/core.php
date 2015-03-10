@@ -42,7 +42,7 @@ function eager_get_embed_code(){
 function eager_get_embed_html() {
   $code = eager_get_embed_code();
   if ($code){
-    echo '<script src="//fast.eager.io/'.$code.'.js"></script>';
+    echo '<script data-cfasync="false" src="//fast.eager.io/'.$code.'.js"></script>';
   }
 }
 add_action('wp_head', 'eager_get_embed_html');
