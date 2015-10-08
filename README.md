@@ -8,7 +8,7 @@ This plugin is used to make the installation and management of [Eager](https://e
 
 You can create a custom build which includes a site id by downloading:
 
-##### `https://packager.eager.io/wordpress/v1.0.1/plugin.zip?siteId=SITE_ID`
+##### `https://packager.eager.io/wordpress/v2.0.1/plugin.zip?siteId=SITE_ID`
 
 Where `SITE_ID` is replaced with your site id.
 
