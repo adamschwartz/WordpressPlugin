@@ -1,12 +1,12 @@
 ## Eager for Wordpress
 
-Use this plugin to make the installation and management of [Eager](https://eager.io) even easier on Wordpress sites.
+This plugin is used to make the installation and management of [Eager](https://eager.io) even easier on Wordpress sites.
+
+**It is not installable directly, it must be downloaded from https://eager.io**
 
 ![](screenshot-2.png)
 
-### [Download Zip](https://github.com/EagerIO/WordpressPlugin/archive/v1.0.1.zip)
-
-You can also create a custom build which includes a site id by downloading:
+You can create a custom build which includes a site id by downloading:
 
 ##### `https://packager.eager.io/wordpress/v1.0.1/plugin.zip?siteId=SITE_ID`
 

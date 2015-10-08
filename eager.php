@@ -14,7 +14,6 @@ define('EAGER_URL', plugin_dir_url(__FILE__));
 
 function eager_load() {
   if (is_admin()){
-    require_once(EAGER_DIR.'includes/admin.php');
     require_once(EAGER_DIR.'includes/welcome.php');
   }
 
@@ -42,7 +41,6 @@ function eager_notify() {
 }
 
 function eager_activation() {
-  eager_init_embed_code();
   eager_notify();
 
   update_option('eager_initial_install', 'true');
