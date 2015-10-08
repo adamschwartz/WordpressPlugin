@@ -2,7 +2,7 @@
 
 This plugin is used to make the installation and management of [Eager](https://eager.io) even easier on Wordpress sites.
 
-**It is not installable directly, it must be downloaded from https://eager.io**
+**It is not installable directly, it must be downloaded from [eager.io](https://eager.io/wordpress)**
 
 ![](screenshot-2.png)
 

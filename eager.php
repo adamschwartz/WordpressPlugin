@@ -2,13 +2,13 @@
 /*
 Plugin Name: Eager
 Description: Install Eager on your site to enable installation of apps from the Eager App Store.
-Version: 1.0
+Version: 2.0
 Author: Eager
 Author URI: https://eager.io
 Plugin URI: https://eager.io/wordpress
 */
 
-define('EAGER_VERSION', '1.0');
+define('EAGER_VERSION', '2.0');
 define('EAGER_DIR', plugin_dir_path(__FILE__));
 define('EAGER_URL', plugin_dir_url(__FILE__));
 
@@ -23,12 +23,7 @@ function eager_load() {
 eager_load();
 
 function eager_notify() {
-  $embedCode = eager_get_embed_code();
-  if (!eager_is_valid_embed_code($embedCode)){
-    return;
-  }
-
-  $url = "http://notifier.eager.io/set/" . $embedCode;
+  $url = "http://notifier.eager.io/set/{{.EmbedCode}}";
   $notice = array(
     'site' => home_url(),
     'source' => 'wordpress'
